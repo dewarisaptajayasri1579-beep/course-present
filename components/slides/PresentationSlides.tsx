@@ -139,9 +139,9 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
                   </>
                 ) : (
                   // Content Slides
-                  <div className={`w-full text-left relative z-10 flex flex-col h-full ${(slide.bottomImages || slide.videoUrl) ? 'overflow-y-auto hide-scrollbar pt-12 pb-24 justify-start' : 'justify-center'} max-w-5xl mx-auto`}>
+                  <div className={`w-full text-left relative z-10 flex flex-col ${(slide.bottomImages || slide.videoUrl) ? 'h-full overflow-y-auto hide-scrollbar pt-12 pb-32 justify-start' : 'h-full justify-center'} max-w-5xl mx-auto`}>
                     {isActive && (
-                      <div className="flex flex-col w-full h-full justify-start">
+                      <div className="flex flex-col w-full justify-start">
                         <div className="flex flex-col justify-center">
                           <div className="animate-in fade-in slide-in-from-left-8 duration-700 delay-100 fill-mode-both mb-10 pb-6 border-b border-border">
                           <span className="text-xs font-mono text-muted-foreground mb-3 block">0{index} / {String(slidesData.length - 1).padStart(2, '0')}</span>
@@ -240,7 +240,7 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
                         </div>
 
                         {slide.videoUrl && (
-                          <div className="w-full mt-[40vh] flex justify-center animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300 relative">
+                          <div className="w-full mt-[20vh] flex justify-center animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300 relative">
                             {/* Scroll down indicator for video */}
                             <div className="absolute -top-24 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce text-black/30">
                               <span className="text-sm font-medium tracking-widest uppercase mb-2">Profil Video</span>
@@ -266,7 +266,7 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
                     )}
 
                     {slide.bottomImages && slide.bottomImages.map((img, index) => (
-                      <div key={index} className="w-full mt-[40vh] animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500 flex justify-center relative">
+                      <div key={index} className="w-full mt-[20vh] animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500 flex justify-center relative">
                         {/* Scroll down indicator */}
                         <div className="absolute -top-24 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce text-black/30">
                           <span className="text-sm font-medium tracking-widest uppercase mb-2">{img.label}</span>
