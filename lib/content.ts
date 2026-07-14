@@ -85,7 +85,7 @@ export const content = {
         videoUrl: '/video/profil.mp4',
         videoSideText: {
           title: 'Kerja sama dengan iMedia Japan (Mr. Yamada)',
-          description: 'Aplikasi Membership Manajemen Seluruh Circuit di Jepang'
+          description: 'Membership Management Application for All Racing Circuits in Japan'
         },
         bottomImages: [
           { src: '/img/aktifitas.png', label: 'Aktivitas' },
@@ -313,7 +313,7 @@ export const content = {
         videoUrl: '/video/profil.mp4',
         videoSideText: {
           title: 'Collaboration with iMedia Japan (Mr. Yamada)',
-          description: 'Membership Management Application for All Circuits in Japan'
+          description: 'Membership Management Application for All Racing Circuits in Japan'
         },
         bottomImages: [
           { src: '/img/aktifitas.png', label: 'Aktivitas' },
