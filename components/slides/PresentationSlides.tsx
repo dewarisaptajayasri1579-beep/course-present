@@ -156,9 +156,9 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
                         )}
 
                         {(slide.items || slide.videoUrl) && (
-                          <div className={`grid gap-6 mt-2 ${slide.videoUrl && slide.items ? 'grid-cols-1 lg:grid-cols-2' : 'grid-cols-1'}`}>
+                          <div className={`grid gap-6 mt-2 items-center ${slide.videoUrl && slide.items ? 'grid-cols-1 lg:grid-cols-5' : 'grid-cols-1'}`}>
                             {slide.items && (
-                              <div className={`grid grid-cols-1 gap-4 ${!slide.videoUrl ? 'md:grid-cols-2' : ''}`}>
+                              <div className={`grid grid-cols-1 gap-4 ${!slide.videoUrl ? 'md:grid-cols-2' : 'lg:col-span-3'}`}>
                                 {slide.items.map((item, i) => {
                                   const isString = typeof item === 'string';
                                   const title = isString ? item : item.title;
@@ -222,17 +222,19 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
                               </div>
                             )}
                             {slide.videoUrl && (
-                              <div className="w-full h-full min-h-[300px] sm:min-h-[400px] animate-in fade-in slide-in-from-right-8 duration-700 delay-300 rounded-3xl overflow-hidden border border-black/10 shadow-sm relative bg-black/5">
-                                {slide.videoUrl.endsWith('.mp4') || slide.videoUrl.endsWith('.mov') ? (
-                                  <video 
-                                    src={slide.videoUrl} 
-                                    className="absolute inset-0 w-full h-full object-cover" 
-                                    controls 
-                                    playsInline 
-                                  />
-                                ) : (
-                                  <iframe src={slide.videoUrl} className="absolute inset-0 w-full h-full" allow="autoplay" allowFullScreen></iframe>
-                                )}
+                              <div className="lg:col-span-2 w-full h-[45vh] sm:h-[60vh] flex justify-center animate-in fade-in slide-in-from-right-8 duration-700 delay-300">
+                                <div className="h-full aspect-[9/16] rounded-[2rem] overflow-hidden border-[6px] border-black/80 shadow-xl relative bg-black/95">
+                                  {slide.videoUrl.endsWith('.mp4') || slide.videoUrl.endsWith('.mov') ? (
+                                    <video 
+                                      src={slide.videoUrl} 
+                                      className="absolute inset-0 w-full h-full object-cover" 
+                                      controls 
+                                      playsInline 
+                                    />
+                                  ) : (
+                                    <iframe src={slide.videoUrl} className="absolute inset-0 w-full h-full" allow="autoplay" allowFullScreen></iframe>
+                                  )}
+                                </div>
                               </div>
                             )}
                           </div>
