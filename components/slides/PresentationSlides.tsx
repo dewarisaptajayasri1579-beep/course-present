@@ -139,10 +139,10 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
                   </>
                 ) : (
                   // Content Slides
-                  <div className={`w-full text-left relative z-10 flex flex-col h-full ${slide.bottomImages ? 'overflow-y-auto hide-scrollbar pt-12 pb-24 justify-start' : 'justify-center'} ${slide.videoUrl ? 'max-w-7xl' : 'max-w-5xl'}`}>
+                  <div className={`w-full text-left relative z-10 flex flex-col h-full ${(slide.bottomImages || slide.videoUrl) ? 'overflow-y-auto hide-scrollbar pt-12 pb-24 justify-start' : 'justify-center'} max-w-5xl mx-auto`}>
                     {isActive && (
-                      <div className={slide.videoUrl ? 'grid grid-cols-1 lg:grid-cols-5 gap-8 items-center h-full' : 'h-full flex flex-col justify-center'}>
-                        <div className={slide.videoUrl ? 'lg:col-span-3 flex flex-col justify-center' : 'flex flex-col justify-center'}>
+                      <div className="flex flex-col w-full h-full justify-start">
+                        <div className="flex flex-col justify-center">
                           <div className="animate-in fade-in slide-in-from-left-8 duration-700 delay-100 fill-mode-both mb-10 pb-6 border-b border-border">
                           <span className="text-xs font-mono text-muted-foreground mb-3 block">0{index} / {String(slidesData.length - 1).padStart(2, '0')}</span>
                           <h2 className="text-4xl sm:text-6xl font-light tracking-tight text-foreground" style={{ fontFamily: '"IBM Plex Sans", sans-serif' }}>
@@ -180,7 +180,14 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
                                       <div className="flex-1">
                                         <span className="text-lg text-foreground/80 leading-relaxed font-medium tracking-tight block">{title}</span>
                                         {hasDetails && (
-                                          <span className="text-xs text-muted-foreground mt-1.5 font-medium tracking-wide block uppercase">Klik untuk detail &rarr;</span>
+                                          <ul className="mt-4 space-y-3 border-t border-black/5 pt-4">
+                                            {(!isString && item.details) && item.details.map((detail, idx) => (
+                                              <li key={idx} className="flex items-start text-foreground/70 text-sm sm:text-base">
+                                                <span className="mr-3 mt-1.5 w-1.5 h-1.5 bg-black/20 rounded-full flex-shrink-0"></span>
+                                                <span className="leading-relaxed">{detail}</span>
+                                              </li>
+                                            ))}
+                                          </ul>
                                         )}
                                       </div>
                                     </div>
@@ -188,34 +195,7 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
 
                                   return (
                                     <div key={i} className={`animate-in fade-in slide-in-from-bottom-4 zoom-in-[0.98] duration-500 fill-mode-both`} style={{ animationDelay: `${300 + (i * 100)}ms` }}>
-                                      {hasDetails ? (
-                                        <Dialog>
-                                          <DialogTrigger asChild>
-                                            {CardContent}
-                                          </DialogTrigger>
-                                          <DialogContent className="sm:max-w-xl">
-                                            <DialogHeader>
-                                              <DialogTitle className="text-2xl font-medium tracking-tight">{title}</DialogTitle>
-                                            </DialogHeader>
-                                            <div className="mt-4 space-y-4">
-                                              {(!isString && item.details) && (
-                                                <ul className="space-y-3">
-                                                  {item.details.map((detail, idx) => (
-                                                    <li key={idx} className="flex items-start text-foreground/70">
-                                                      <svg className="w-5 h-5 mr-3 text-black/40 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                      </svg>
-                                                      <span className="text-lg leading-relaxed">{detail}</span>
-                                                    </li>
-                                                  ))}
-                                                </ul>
-                                              )}
-                                            </div>
-                                          </DialogContent>
-                                        </Dialog>
-                                      ) : (
-                                        CardContent
-                                      )}
+                                      {CardContent}
                                     </div>
                               );
                             })}
@@ -260,8 +240,15 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
                         </div>
 
                         {slide.videoUrl && (
-                          <div className="lg:col-span-2 w-full h-[65vh] sm:h-[80vh] flex justify-center animate-in fade-in slide-in-from-right-8 duration-700 delay-300">
-                            <div className="h-full aspect-[9/16] rounded-[2rem] overflow-hidden border-[6px] border-black/80 shadow-xl relative bg-black/95">
+                          <div className="w-full mt-[40vh] flex justify-center animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300 relative">
+                            {/* Scroll down indicator for video */}
+                            <div className="absolute -top-24 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce text-black/30">
+                              <span className="text-sm font-medium tracking-widest uppercase mb-2">Profil Video</span>
+                              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                              </svg>
+                            </div>
+                            <div className="w-full sm:w-[400px] aspect-[9/16] rounded-[2.5rem] overflow-hidden border-[8px] border-black/80 shadow-2xl relative bg-black/95">
                               {slide.videoUrl.endsWith('.mp4') || slide.videoUrl.endsWith('.mov') ? (
                                 <video 
                                   src={slide.videoUrl} 
