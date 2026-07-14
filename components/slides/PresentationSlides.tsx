@@ -279,7 +279,14 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
                     )}
 
                     {slide.bottomImage && (
-                      <div className="w-full mt-16 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500 flex justify-center">
+                      <div className="w-full mt-[40vh] animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500 flex justify-center relative">
+                        {/* Scroll down indicator */}
+                        <div className="absolute -top-24 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce text-black/30">
+                          <span className="text-sm font-medium tracking-widest uppercase mb-2">Aktivitas</span>
+                          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                          </svg>
+                        </div>
                         <img 
                           src={slide.bottomImage} 
                           alt="Section Image" 
