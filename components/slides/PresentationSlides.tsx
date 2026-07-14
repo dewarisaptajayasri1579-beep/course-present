@@ -222,8 +222,17 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
                               </div>
                             )}
                             {slide.videoUrl && (
-                              <div className="w-full h-full min-h-[300px] sm:min-h-[400px] animate-in fade-in slide-in-from-right-8 duration-700 delay-300">
-                                <iframe src={slide.videoUrl} className="w-full h-full rounded-3xl border border-black/10 shadow-sm" allow="autoplay" allowFullScreen></iframe>
+                              <div className="w-full h-full min-h-[300px] sm:min-h-[400px] animate-in fade-in slide-in-from-right-8 duration-700 delay-300 rounded-3xl overflow-hidden border border-black/10 shadow-sm relative bg-black/5">
+                                {slide.videoUrl.endsWith('.mp4') || slide.videoUrl.endsWith('.mov') ? (
+                                  <video 
+                                    src={slide.videoUrl} 
+                                    className="absolute inset-0 w-full h-full object-cover" 
+                                    controls 
+                                    playsInline 
+                                  />
+                                ) : (
+                                  <iframe src={slide.videoUrl} className="absolute inset-0 w-full h-full" allow="autoplay" allowFullScreen></iframe>
+                                )}
                               </div>
                             )}
                           </div>
