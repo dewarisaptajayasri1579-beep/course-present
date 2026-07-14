@@ -81,12 +81,12 @@ export const content = {
       {
         id: 'peluang',
         title: 'Kenapa Harus Jualan Aplikasi?',
-        items: [
-          { title: 'Modal Relatif Terjangkau', details: ['Keahlian', 'Kreativitas', 'Laptop', 'Internet', 'Tools AI (Tanpa perlu sewa toko fisik/gudang)'] },
-          { title: 'Banyak yang Membutuhkan', details: ['UMKM', 'Sekolah', 'Rental Mobil / Toko', 'Rumah Sakit / Klinik', 'Dinas Pemerintahan', 'Bisnis Jasa lainnya'] },
-          { title: 'Bisa Menghasilkan Passive Income', details: ['Biaya pembuatan awal', 'Biaya langganan bulanan', 'Biaya maintenance', 'Biaya server tahunan', 'Biaya tambahan fitur / per user'] },
-          { title: 'Sekarang Aplikasi Lebih Mudah Dibuat', details: ['Dibantu ChatGPT untuk konsep', 'Dibantu AI (v0/Lovable) untuk desain & kode frontend', 'Tidak perlu ngetik kode 100% manual lagi'] },
-          { title: 'Permintaan Terus Bertambah', details: ['Semua usaha butuh digitalisasi agar kerja lebih cepat', 'Data lebih rapi & minim kesalahan manusia'] }
+        bentoItems: [
+          { icon: 'DollarSign', title: 'Modal Terjangkau', details: ['Keahlian', 'Kreativitas', 'Laptop & Internet', 'Tools AI (Tanpa sewa toko)'] },
+          { icon: 'Target', title: 'Banyak yang Butuh', details: ['UMKM', 'Sekolah', 'Rental Mobil / Toko', 'Rumah Sakit / Klinik', 'Dinas Pemerintahan'] },
+          { icon: 'TrendingUp', title: 'Passive Income', details: ['Biaya pembuatan awal', 'Biaya langganan bulanan', 'Biaya maintenance', 'Biaya server tahunan'] },
+          { icon: 'Sparkles', title: 'Lebih Mudah Dibuat', details: ['Dibantu ChatGPT untuk konsep', 'AI (v0/Lovable) untuk frontend', 'Tanpa ngetik kode 100% manual'] },
+          { icon: 'MonitorSmartphone', title: 'Permintaan Naik', details: ['Semua usaha butuh digitalisasi', 'Kerja lebih cepat', 'Data lebih rapi & aman'] }
         ]
       },
       {
@@ -288,11 +288,11 @@ export const content = {
       {
         id: 'peluang',
         title: 'Why the App Business?',
-        items: [
-          { title: 'Low Capital', details: ['Only needs laptop, internet, and AI tools'] },
-          { title: 'High Demand', details: ['SMEs, Schools, Clinics, Agencies'] },
-          { title: 'Passive Income', details: ['Monthly subscriptions', 'Maintenance fees'] },
-          { title: 'Easier to Build', details: ['AI generates code and designs'] }
+        bentoItems: [
+          { icon: 'DollarSign', title: 'Low Capital', details: ['Laptop, internet, and AI tools'] },
+          { icon: 'Target', title: 'High Demand', details: ['SMEs, Schools, Clinics, Agencies'] },
+          { icon: 'TrendingUp', title: 'Passive Income', details: ['Monthly subscriptions', 'Maintenance fees'] },
+          { icon: 'Sparkles', title: 'Easier to Build', details: ['AI generates code and designs'] }
         ]
       },
       {

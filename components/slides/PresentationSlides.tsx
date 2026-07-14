@@ -19,6 +19,7 @@ import {
 
 import { SlideStackingCards, StackingCardItem } from './SlideStackingCards';
 import { SlideDevEx, DevExItem } from './SlideDevEx';
+import { SlideBentoGrid, BentoGridItem } from './SlideBentoGrid';
 
 // Copied from content.ts to type the props locally
 export interface SlidePoint {
@@ -35,6 +36,7 @@ interface SlideItem {
   items?: (string | SlidePoint)[];
   stackingItems?: StackingCardItem[];
   devExItems?: DevExItem[];
+  bentoItems?: BentoGridItem[];
   text?: string;
   quote?: string;
 }
@@ -228,6 +230,14 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
                           <div className="w-full mt-4 flex-1">
                             <div className="animate-in fade-in zoom-in-95 duration-1000 delay-300 fill-mode-both w-full h-full flex justify-center">
                               <SlideDevEx items={slide.devExItems} />
+                            </div>
+                          </div>
+                        )}
+
+                        {slide.bentoItems && (
+                          <div className="w-full mt-4 flex-1">
+                            <div className="animate-in fade-in zoom-in-95 duration-1000 delay-300 fill-mode-both w-full h-full flex justify-center">
+                              <SlideBentoGrid items={slide.bentoItems} />
                             </div>
                           </div>
                         )}
