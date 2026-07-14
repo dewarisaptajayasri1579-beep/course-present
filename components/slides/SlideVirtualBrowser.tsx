@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export interface BrowserTabItem {
   id: string;
@@ -15,9 +15,25 @@ interface SlideVirtualBrowserProps {
 
 export function SlideVirtualBrowser({ tabs }: SlideVirtualBrowserProps) {
   const [activeTabId, setActiveTabId] = useState(tabs[0]?.id);
-  const [isImageMode, setIsImageMode] = useState(false);
+  const [embedStatus, setEmbedStatus] = useState<Record<string, boolean | null>>({});
+
+  useEffect(() => {
+    // Check all URLs to see if they allow iframe embedding
+    tabs.forEach(async (tab) => {
+      if (tab.url && embedStatus[tab.id] === undefined) {
+        try {
+          const res = await fetch(`/api/check-iframe?url=${encodeURIComponent(tab.url)}`);
+          const data = await res.json();
+          setEmbedStatus(prev => ({ ...prev, [tab.id]: data.embeddable }));
+        } catch {
+          setEmbedStatus(prev => ({ ...prev, [tab.id]: false }));
+        }
+      }
+    });
+  }, [tabs]);
 
   const activeTab = tabs.find(t => t.id === activeTabId) || tabs[0];
+  const isBlocked = activeTab?.url ? embedStatus[activeTab.id] === false : false;
 
   if (!tabs || tabs.length === 0) return null;
 
@@ -65,26 +81,27 @@ export function SlideVirtualBrowser({ tabs }: SlideVirtualBrowserProps) {
             <svg className="w-3 h-3 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
             {activeTab?.url || activeTab?.imageSrc || 'https://...'}
           </div>
-          <button 
-            onClick={() => setIsImageMode(!isImageMode)}
-            className={`ml-2 px-3 py-1 text-[10px] sm:text-xs font-medium rounded-md transition-colors border ${isImageMode ? 'bg-black text-white border-black' : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-100'} whitespace-nowrap`}
-            title="Toggle between Live Website and Screenshot"
-          >
-            {isImageMode ? '🖼️ Image Mode' : '🌐 Live Mode'}
-          </button>
+          {embedStatus[activeTabId] === false && (
+            <div className="ml-2 px-2 py-1 bg-amber-100 text-amber-700 text-[10px] sm:text-xs font-medium rounded border border-amber-200 whitespace-nowrap flex items-center">
+              <svg className="w-3 h-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+              Auto Image Fallback
+            </div>
+          )}
         </div>
 
         {/* Browser Content */}
         <div className="relative w-full h-[55vh] sm:h-[65vh] bg-gray-50 overflow-hidden">
-          {tabs.map((tab) => (
-            <div
-              key={tab.id}
-              className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
-                activeTabId === tab.id ? 'opacity-100 z-10 pointer-events-auto' : 'opacity-0 z-0 pointer-events-none'
-              }`}
-            >
-              {!isImageMode && tab.url ? (
-                /* Scaled Iframe */
+          {tabs.map((tab) => {
+            const isTabBlocked = embedStatus[tab.id] === false;
+            return (
+              <div
+                key={tab.id}
+                className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
+                  activeTabId === tab.id ? 'opacity-100 z-10 pointer-events-auto' : 'opacity-0 z-0 pointer-events-none'
+                }`}
+              >
+                {!isTabBlocked && tab.url ? (
+                  /* Scaled Iframe */
                 <div className="w-full h-full relative overflow-hidden bg-white flex items-center justify-center">
                    {/* We scale the iframe by 1.5. Width/height needs to be 100% / 1.5 */}
                    <iframe 
@@ -105,21 +122,22 @@ export function SlideVirtualBrowser({ tabs }: SlideVirtualBrowserProps) {
                    />
                 </div>
               ) : (
-                /* Fallback Image */
-                <div className="w-full h-full flex items-center justify-center bg-gray-100/50 p-6">
-                  {tab.imageSrc ? (
-                     <img 
-                       src={tab.imageSrc} 
-                       alt={tab.label}
-                       className="max-w-full max-h-full object-contain rounded-lg border border-black/5 shadow-sm bg-white"
-                     />
-                  ) : (
-                     <div className="text-gray-400 font-medium tracking-wide">Screenshot / URL belum tersedia</div>
-                  )}
-                </div>
-              )}
-            </div>
-          ))}
+                  /* Fallback Image */
+                  <div className="w-full h-full flex items-center justify-center bg-gray-100/50 p-6">
+                    {tab.imageSrc ? (
+                       <img 
+                         src={tab.imageSrc} 
+                         alt={tab.label}
+                         className="max-w-full max-h-full object-contain rounded-lg shadow-sm"
+                       />
+                    ) : (
+                       <div className="text-gray-400 font-medium tracking-wide">Screenshot / URL belum tersedia</div>
+                    )}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
