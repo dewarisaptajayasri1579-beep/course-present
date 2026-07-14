@@ -97,7 +97,7 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
                         {slide.items && (
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
                             {slide.items.map((item, i) => (
-                              <div key={i} className={`animate-in fade-in slide-in-from-bottom-4 zoom-in-[0.98] duration-500 fill-mode-both flex items-start bg-card p-5 rounded-2xl border border-border hover:border-black/20 hover:shadow-sm transition-all duration-300 group/card`} style={{ animationDelay: \`\${300 + (i * 100)}ms\` }}>
+                              <div key={i} className={`animate-in fade-in slide-in-from-bottom-4 zoom-in-[0.98] duration-500 fill-mode-both flex items-start bg-card p-5 rounded-2xl border border-border hover:border-black/20 hover:shadow-sm transition-all duration-300 group/card`} style={{ animationDelay: `${300 + (i * 100)}ms` }}>
                                 <div className="bg-black/5 p-2 rounded-lg mr-4 mt-0.5 text-black/40 group-hover/card:bg-black group-hover/card:text-white transition-colors">
                                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />

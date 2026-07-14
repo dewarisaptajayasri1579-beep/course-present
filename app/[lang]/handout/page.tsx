@@ -92,20 +92,7 @@ export default function HandoutPage({ params }: { params: Promise<{ lang: string
             </div>
           </div>
 
-          <div className="relative group mt-12">
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity print:hidden"></div>
-            <div className="relative">
-              <h3 className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 print:text-gray-800 mb-3 ml-1 flex items-center">
-                <svg className="w-5 h-5 mr-2 text-pink-400 print:text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-                {t.prompts.cheatCodeTitle}
-              </h3>
-              <div className="bg-[#0D1117] print:bg-gray-100 text-purple-400 print:text-black p-6 rounded-2xl font-mono text-sm leading-relaxed overflow-x-auto border border-purple-500/20 print:border-gray-300 shadow-inner">
-                <pre>{t.prompts.cheatCodeCommand}</pre>
-              </div>
-            </div>
-          </div>
+
         </section>
 
         {/* Testing Checklist */}

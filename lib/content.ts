@@ -117,17 +117,6 @@ export const content = {
         quote: '"Buatkan aplikasi web LaundrySmart. Ada sidebar, order stats, pesanan terbaru, & tombol tambah. Desain modern biru putih. HARUS responsive untuk desktop & HP. Beri data dummy."'
       },
       {
-        id: 'cheat-code',
-        title: 'The Ultimate Cheat Code 🔥',
-        text: 'Tidak perlu coding dari nol! Gunakan Template Master kita:',
-        items: [
-          'Sudah termasuk Radix UI & animasi canggih',
-          'Tinggal copy-paste hasil dari v0.dev',
-          'Siap dukung grafik (Recharts) & 3D (Three.js)',
-          'Hasil akhir sekelas Startup Profesional!'
-        ]
-      },
-      {
         id: 'ishoma',
         title: 'ISHOMA (12.00–13.00)',
         subtitle: 'Istirahat, Salat, dan Makan',
@@ -195,9 +184,7 @@ export const content = {
         step1Title: 'Prompt ChatGPT (Untuk Konsep)',
         step1Prompt: 'Saya ingin membuat aplikasi [NAMA APLIKASI]. Buatkan konsep aplikasi sederhana untuk membantu [TARGET USER]. Buatkan: 1. Masalah yang diselesaikan, 2. Fitur utama (maks 4), 3. Struktur menu, 4. Rekomendasi warna UI, 5. Model bisnisnya.',
         step2Title: 'Prompt Frontend AI (Lovable/Bolt/v0)',
-        step2Prompt: 'Buatkan aplikasi web bernama [NAMA APLIKASI]. Target user adalah [TARGET USER]. Buat halaman dashboard dengan: sidebar di kiri, header dengan nama aplikasi. Isi konten: [DAFTAR FITUR]. Gunakan gaya desain modern, profesional, dan warna [WARNA]. Tampilan HARUS responsive untuk HP dan Laptop. Beri data dummy agar terlihat nyata.',
-        cheatCodeTitle: 'Terminal Command: Clone Template',
-        cheatCodeCommand: 'git clone https://github.com/OnySeven/agentic-build-orchestrate-a.git aplikasi-saya\ncd aplikasi-saya\nnpm install\nnpm run dev'
+        step2Prompt: 'Buatkan aplikasi web bernama [NAMA APLIKASI]. Target user adalah [TARGET USER]. Buat halaman dashboard dengan: sidebar di kiri, header dengan nama aplikasi. Isi konten: [DAFTAR FITUR]. Gunakan gaya desain modern, profesional, dan warna [WARNA]. Tampilan HARUS responsive untuk HP dan Laptop. Beri data dummy agar terlihat nyata.'
       },
       checklist: {
         title: 'Checklist Sebelum Penilaian',
@@ -328,17 +315,6 @@ export const content = {
         quote: '"Build a web app named LaundrySmart. Include a sidebar, order stats, recent orders, & add button. Modern blue & white design. MUST be responsive. Include dummy data."'
       },
       {
-        id: 'cheat-code',
-        title: 'The Ultimate Cheat Code 🔥',
-        text: 'No need to code from scratch! Use our Master Template:',
-        items: [
-          'Includes Radix UI & smooth animations',
-          'Just copy-paste code from v0.dev',
-          'Ready for charts (Recharts) & 3D (Three.js)',
-          'End result looks like a Silicon Valley Startup!'
-        ]
-      },
-      {
         id: 'ishoma',
         title: 'BREAK (12.00–13.00)',
         subtitle: 'Lunch and Prayer Break',
@@ -406,9 +382,7 @@ export const content = {
         step1Title: 'ChatGPT Prompt (For Concepts)',
         step1Prompt: 'I want to build an app called [APP NAME]. Create a simple concept to help [TARGET USER]. Provide: 1. Problem solved, 2. Core features (max 4), 3. Menu structure, 4. UI color recommendations, 5. Business model.',
         step2Title: 'Frontend AI Prompt (Lovable/Bolt/v0)',
-        step2Prompt: 'Build a web app named [APP NAME]. Target user is [TARGET USER]. Create a dashboard with: a left sidebar, a header with the app name. Content: [LIST OF FEATURES]. Use a modern, professional design style with [COLORS]. The UI MUST be responsive for mobile and desktop. Include dummy data to make it look real.',
-        cheatCodeTitle: 'Terminal Command: Clone Template',
-        cheatCodeCommand: 'git clone https://github.com/OnySeven/agentic-build-orchestrate-a.git my-app\ncd my-app\nnpm install\nnpm run dev'
+        step2Prompt: 'Build a web app named [APP NAME]. Target user is [TARGET USER]. Create a dashboard with: a left sidebar, a header with the app name. Content: [LIST OF FEATURES]. Use a modern, professional design style with [COLORS]. The UI MUST be responsive for mobile and desktop. Include dummy data to make it look real.'
       },
       checklist: {
         title: 'Pre-Submission Checklist',
