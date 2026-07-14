@@ -38,6 +38,7 @@ interface SlideItem {
   devExItems?: DevExItem[];
   bentoItems?: BentoGridItem[];
   videoUrl?: string;
+  bottomImage?: string;
   text?: string;
   quote?: string;
 }
@@ -138,7 +139,7 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
                   </>
                 ) : (
                   // Content Slides
-                  <div className={`w-full text-left relative z-10 flex flex-col h-full justify-center ${slide.videoUrl ? 'max-w-7xl' : 'max-w-5xl'}`}>
+                  <div className={`w-full text-left relative z-10 flex flex-col h-full ${slide.bottomImage ? 'overflow-y-auto hide-scrollbar pt-12 pb-24 justify-start' : 'justify-center'} ${slide.videoUrl ? 'max-w-7xl' : 'max-w-5xl'}`}>
                     {isActive && (
                       <div className={slide.videoUrl ? 'grid grid-cols-1 lg:grid-cols-5 gap-8 items-center h-full' : 'h-full flex flex-col justify-center'}>
                         <div className={slide.videoUrl ? 'lg:col-span-3 flex flex-col justify-center' : 'flex flex-col justify-center'}>
@@ -274,6 +275,16 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
                             </div>
                           </div>
                         )}
+                      </div>
+                    )}
+
+                    {slide.bottomImage && (
+                      <div className="w-full mt-16 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500 flex justify-center">
+                        <img 
+                          src={slide.bottomImage} 
+                          alt="Section Image" 
+                          className="w-full max-w-5xl h-auto rounded-3xl border border-black/10 shadow-lg"
+                        />
                       </div>
                     )}
                   </div>
