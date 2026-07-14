@@ -21,38 +21,38 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: 'Agentic — Autonomous AI Agents at Scale',
-  description: 'Deploy autonomous AI agents that think, act, and execute across any workflow. Connect 200+ integrations, run agents in parallel, and ship faster with the Agentic platform.',
-  keywords: ['AI agents', 'autonomous agents', 'LLM orchestration', 'AI automation', 'multi-agent platform'],
-  authors: [{ name: 'Agentic' }],
+  title: 'course-present of Ony Seven',
+  description: 'AI One Day Course Presentation by Ony Seven',
+  keywords: ['AI course', 'presentation', 'Ony Seven', 'AI web app'],
+  authors: [{ name: 'Ony Seven' }],
   openGraph: {
-    title: 'Agentic — Autonomous AI Agents at Scale',
-    description: 'Deploy autonomous AI agents that think, act, and execute across any workflow.',
+    title: 'course-present of Ony Seven',
+    description: 'AI One Day Course Presentation by Ony Seven',
     type: 'website',
-    url: 'https://agentic.ai',
-    siteName: 'Agentic',
+    url: 'https://onyseven.github.io',
+    siteName: 'course-present',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Agentic — Autonomous AI Agents at Scale',
-    description: 'Deploy autonomous AI agents that think, act, and execute across any workflow.',
+    title: 'course-present of Ony Seven',
+    description: 'AI One Day Course Presentation by Ony Seven',
   },
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
+        url: '/img/logo7smarts.png',
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/icon-dark-32x32.png',
+        url: '/img/logo7smarts.png',
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: '/img/logo7smarts.png',
+        type: 'image/png',
       },
     ],
-    apple: '/apple-icon.png',
+    apple: '/img/logo7smarts.png',
   },
 }
 
