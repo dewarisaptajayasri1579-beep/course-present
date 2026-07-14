@@ -38,6 +38,7 @@ interface SlideItem {
   devExItems?: DevExItem[];
   bentoItems?: BentoGridItem[];
   videoUrl?: string;
+  videoSideText?: { title: string; description: string };
   bottomImages?: { src: string; label: string }[];
   text?: string;
   quote?: string;
@@ -240,15 +241,23 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
                         </div>
 
                         {slide.videoUrl && (
-                          <div className="w-full mt-[20vh] flex justify-center animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300 relative">
+                          <div className={`w-full mt-[20vh] grid ${slide.videoSideText ? 'grid-cols-1 md:grid-cols-2 gap-12 items-center' : 'grid-cols-1 justify-center'} animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300 relative`}>
                             {/* Scroll down indicator for video */}
-                            <div className="absolute -top-24 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce text-black/30">
+                            <div className={`absolute -top-24 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce text-black/30 ${slide.videoSideText ? 'md:hidden' : ''}`}>
                               <span className="text-sm font-medium tracking-widest uppercase mb-2">Profil Video</span>
                               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                               </svg>
                             </div>
-                            <div className="w-[85%] sm:w-[320px] aspect-[9/16] rounded-[2.5rem] overflow-hidden border-[8px] border-black/80 shadow-2xl relative bg-black/95">
+
+                            {slide.videoSideText && (
+                              <div className="flex flex-col text-left space-y-4 md:order-1 order-2 mt-8 md:mt-0">
+                                <h3 className="text-3xl md:text-4xl font-medium tracking-tight text-foreground leading-tight" style={{ fontFamily: '"IBM Plex Sans", sans-serif' }}>{slide.videoSideText.title}</h3>
+                                <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">{slide.videoSideText.description}</p>
+                              </div>
+                            )}
+
+                            <div className={`w-[85%] sm:w-[320px] aspect-[9/16] rounded-[2.5rem] overflow-hidden border-[8px] border-black/80 shadow-2xl relative bg-black/95 md:order-2 order-1 ${slide.videoSideText ? 'justify-self-center md:justify-self-end' : 'mx-auto'}`}>
                               {slide.videoUrl.endsWith('.mp4') || slide.videoUrl.endsWith('.mov') ? (
                                 <video 
                                   src={slide.videoUrl} 

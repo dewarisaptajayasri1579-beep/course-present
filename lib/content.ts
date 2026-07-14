@@ -83,6 +83,10 @@ export const content = {
         title: 'Coach Ony Sapta Nugraha',
         subtitle: 'Founder Seven Smarts Indonesia & IT Consultant',
         videoUrl: '/video/profil.mp4',
+        videoSideText: {
+          title: 'Kerja sama dengan iMedia Japan (Mr. Yamada)',
+          description: 'Aplikasi Membership Manajemen Seluruh Circuit di Jepang'
+        },
         bottomImages: [
           { src: '/img/aktifitas.png', label: 'Aktivitas' },
           { src: '/img/transfer/image.png', label: 'Cuan dari Aplikasi' }
@@ -307,6 +311,10 @@ export const content = {
         title: 'Coach Ony Sapta Nugraha',
         subtitle: 'Founder Seven Smarts Indonesia & IT Consultant',
         videoUrl: '/video/profil.mp4',
+        videoSideText: {
+          title: 'Collaboration with iMedia Japan (Mr. Yamada)',
+          description: 'Membership Management Application for All Circuits in Japan'
+        },
         bottomImages: [
           { src: '/img/aktifitas.png', label: 'Aktivitas' },
           { src: '/img/transfer/image.png', label: 'Cuan dari Aplikasi' }
