@@ -38,7 +38,7 @@ interface SlideItem {
   devExItems?: DevExItem[];
   bentoItems?: BentoGridItem[];
   videoUrl?: string;
-  bottomImage?: string;
+  bottomImages?: { src: string; label: string }[];
   text?: string;
   quote?: string;
 }
@@ -139,7 +139,7 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
                   </>
                 ) : (
                   // Content Slides
-                  <div className={`w-full text-left relative z-10 flex flex-col h-full ${slide.bottomImage ? 'overflow-y-auto hide-scrollbar pt-12 pb-24 justify-start' : 'justify-center'} ${slide.videoUrl ? 'max-w-7xl' : 'max-w-5xl'}`}>
+                  <div className={`w-full text-left relative z-10 flex flex-col h-full ${slide.bottomImages ? 'overflow-y-auto hide-scrollbar pt-12 pb-24 justify-start' : 'justify-center'} ${slide.videoUrl ? 'max-w-7xl' : 'max-w-5xl'}`}>
                     {isActive && (
                       <div className={slide.videoUrl ? 'grid grid-cols-1 lg:grid-cols-5 gap-8 items-center h-full' : 'h-full flex flex-col justify-center'}>
                         <div className={slide.videoUrl ? 'lg:col-span-3 flex flex-col justify-center' : 'flex flex-col justify-center'}>
@@ -278,22 +278,22 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
                       </div>
                     )}
 
-                    {slide.bottomImage && (
-                      <div className="w-full mt-[40vh] animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500 flex justify-center relative">
+                    {slide.bottomImages && slide.bottomImages.map((img, index) => (
+                      <div key={index} className="w-full mt-[40vh] animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500 flex justify-center relative">
                         {/* Scroll down indicator */}
                         <div className="absolute -top-24 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce text-black/30">
-                          <span className="text-sm font-medium tracking-widest uppercase mb-2">Aktivitas</span>
+                          <span className="text-sm font-medium tracking-widest uppercase mb-2">{img.label}</span>
                           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                           </svg>
                         </div>
                         <img 
-                          src={slide.bottomImage} 
-                          alt="Section Image" 
+                          src={img.src} 
+                          alt={img.label} 
                           className="w-full max-w-5xl h-auto rounded-3xl border border-black/10 shadow-lg"
                         />
                       </div>
-                    )}
+                    ))}
                   </div>
                 )}
               </div>
