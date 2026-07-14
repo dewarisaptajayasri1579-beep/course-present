@@ -157,8 +157,8 @@ export const content = {
       {
         id: 'tahap-2',
         title: 'Tahap 2: Konsep Desain Responsive',
-        text: 'Tentukan halaman utama yang akan dibuat. Pastikan aplikasi dapat tampil dengan baik pada Laptop, Tablet, dan Smartphone.',
-        items: ['Header & Nama aplikasi', 'Tombol tindakan utama', 'Daftar transaksi / Statistik', 'Navigasi bawah atau sidebar']
+        text: 'Gunakan ChatGPT untuk merancang tata letak (layout) halaman yang responsif.',
+        quote: '"Berdasarkan konsep aplikasi sebelumnya, buatkan rincian tata letak UI/UX yang responsif. Apa saja elemen yang harus ada di layar HP vs layar Laptop? Sebutkan posisi menu, tombol utama, dan daftar fitur."'
       },
       {
         id: 'tahap-3',
@@ -409,8 +409,8 @@ export const content = {
       {
         id: 'tahap-2',
         title: 'Phase 2: Responsive Web Design Concept',
-        text: 'Determine the main pages. Ensure the app works well on Laptops, Tablets, and Smartphones.',
-        items: ['Header & App Name', 'Main Call-to-Action Buttons', 'Transaction List / Statistics', 'Bottom Navigation or Sidebar']
+        text: 'Use ChatGPT to design a responsive page layout for various devices.',
+        quote: '"Based on the app concept, create a detailed responsive UI/UX layout. What elements should be on a mobile screen vs a laptop screen? Specify menu positions, primary buttons, and feature lists."'
       },
       {
         id: 'tahap-3',
