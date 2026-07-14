@@ -88,10 +88,12 @@ export const content = {
           { src: '/img/transfer/image.png', label: 'Cuan dari Aplikasi' }
         ],
         items: [
-          'Memiliki pengalaman 10+ tahun di bidang IT & Software Development',
-          'Telah menangani lebih dari 100 klien dari berbagai wilayah (Jepang, Jakarta, Surabaya, dll)',
-          'Fokus membantu UMKM dan perusahaan untuk digitalisasi bisnis melalui aplikasi'
-        ]
+          { title: '2005–2008 | Pendidikan', details: ['Kuliah D3 Teknik Komputer.'] },
+          { title: '2009–2014 | Yamaha', details: ['Bekerja di bagian IT dan Sistem Quality Assurance.'] },
+          { title: '2014–2015 | Kawasaki', details: ['Bekerja di bagian Audit Operasional.'] },
+          { title: '2016–2018 | Programmer', details: ['2016: Bekerja sebagai programmer di Gresik.', '2017-2018: Menjadi programmer single fighter mengerjakan proyek mandiri.'] },
+          { title: '2019–Sekarang | Seven Smarts', details: ['Mendirikan dan mengembangkan Seven Smarts Indonesia.', 'Telah menangani lebih dari 100 klien dari berbagai wilayah (Jepang, Jakarta, Surabaya, dll).'] }
+        ],
       },
       {
         id: 'peluang',
@@ -310,10 +312,12 @@ export const content = {
           { src: '/img/transfer/image.png', label: 'Cuan dari Aplikasi' }
         ],
         items: [
-          '10+ years of experience in IT & Software Development',
-          'Managed over 100 clients across various regions (Japan, Jakarta, Surabaya, etc.)',
-          'Focused on helping SMEs and enterprises digitalize their business through apps'
-        ]
+          { title: '2005–2008 | Education', details: ['Diploma in Computer Engineering.'] },
+          { title: '2009–2014 | Yamaha', details: ['Worked in IT and Quality Assurance Systems.'] },
+          { title: '2014–2015 | Kawasaki', details: ['Worked in Operational Auditing.'] },
+          { title: '2016–2018 | Programmer', details: ['2016: Worked as a programmer in Gresik.', '2017-2018: Independent freelance programmer.'] },
+          { title: '2019–Present | Seven Smarts', details: ['Founded and developed Seven Smarts Indonesia.', 'Managed over 100 clients across various regions (Japan, Jakarta, Surabaya, etc.).'] }
+        ],
       },
       {
         id: 'peluang',
