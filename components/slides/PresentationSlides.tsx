@@ -107,10 +107,10 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
                             <div className="w-2 h-2 rounded-full bg-black/60"></div>
                             {slide.organization}
                           </div>
-                          <h1 className="animate-in fade-in slide-in-from-bottom-6 zoom-in-95 duration-700 delay-200 fill-mode-both text-5xl sm:text-7xl md:text-8xl font-medium tracking-tighter text-black leading-[1.1] drop-shadow-sm">
+                          <h1 className="animate-in fade-in slide-in-from-bottom-6 zoom-in-95 duration-700 delay-200 fill-mode-both text-5xl sm:text-7xl md:text-8xl font-light text-[#111] leading-[1.0] tracking-tight mb-4 drop-shadow-sm" style={{ fontFamily: '"IBM Plex Sans", sans-serif' }}>
                             {slide.title}
                           </h1>
-                          <h2 className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300 fill-mode-both text-2xl sm:text-3xl text-black/60 max-w-3xl mx-auto font-light tracking-wide mt-4">
+                          <h2 className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300 fill-mode-both text-2xl sm:text-3xl text-black/60 max-w-3xl mx-auto font-light tracking-wide" style={{ fontFamily: '"IBM Plex Sans", sans-serif' }}>
                             {slide.subtitle}
                           </h2>
                           <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500 fill-mode-both mt-16 pt-12 border-t border-black/10 max-w-lg mx-auto flex items-center justify-center gap-4">
@@ -135,11 +135,11 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
                       <>
                         <div className="animate-in fade-in slide-in-from-left-8 duration-700 delay-100 fill-mode-both mb-10 pb-6 border-b border-border">
                           <span className="text-xs font-mono text-muted-foreground mb-3 block">0{index} / {String(slidesData.length - 1).padStart(2, '0')}</span>
-                          <h2 className="text-4xl sm:text-6xl font-medium tracking-tighter text-foreground">
+                          <h2 className="text-4xl sm:text-6xl font-light tracking-tight text-foreground" style={{ fontFamily: '"IBM Plex Sans", sans-serif' }}>
                             {slide.title}
                           </h2>
                           {slide.subtitle && (
-                            <p className="text-xl text-muted-foreground mt-3 tracking-wide">{slide.subtitle}</p>
+                            <p className="text-xl text-muted-foreground mt-3 tracking-wide" style={{ fontFamily: '"IBM Plex Sans", sans-serif' }}>{slide.subtitle}</p>
                           )}
                         </div>
                         
