@@ -72,10 +72,20 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 export function SlideBentoGrid({ items }: { items: BentoGridItem[] }) {
+  // To prevent Swiper from sliding when we scroll inside this container
+  const handleWheel = (e: React.WheelEvent) => {
+    e.stopPropagation()
+  }
+
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center p-4">
-      <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {items.map((item, i) => {
+    <div 
+      className="w-full flex-1 overflow-y-auto hide-scrollbar -mt-4 pb-24 h-[55vh]"
+      onWheel={handleWheel}
+      onTouchMove={(e) => e.stopPropagation()}
+    >
+      <div className="w-full h-full flex flex-col items-center">
+        <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+          {items.map((item, i) => {
           const IconComponent = item.icon && iconMap[item.icon] ? iconMap[item.icon] : Sparkles;
           
           return (
@@ -111,6 +121,7 @@ export function SlideBentoGrid({ items }: { items: BentoGridItem[] }) {
             </BentoCard>
           )
         })}
+        </div>
       </div>
     </div>
   )
