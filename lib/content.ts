@@ -148,10 +148,28 @@ export const content = {
         quote: '"Saya ingin membuat aplikasi laundry. Buatkan konsep sederhana: nama, masalah yang diselesaikan, pengguna, fitur utama, menu, warna, dan bisnis model."'
       },
       {
+        id: 'tahap-2',
+        title: 'Tahap 2: Konsep Desain Responsive',
+        text: 'Tentukan halaman utama yang akan dibuat. Pastikan aplikasi dapat tampil dengan baik pada Laptop, Tablet, dan Smartphone.',
+        items: ['Header & Nama aplikasi', 'Tombol tindakan utama', 'Daftar transaksi / Statistik', 'Navigasi bawah atau sidebar']
+      },
+      {
+        id: 'tahap-3',
+        title: 'Tahap 3: Membuat Mockup Gambar',
+        text: 'Buat gambaran visual tata letak dan warna sebelum di-coding.',
+        items: ['Gunakan ChatGPT Image, Canva, atau Figma', 'Tentukan posisi tombol, warna utama, dan bentuk card']
+      },
+      {
         id: 'frontend-prompt',
         title: 'Tahap 4: Prompt Frontend AI',
         text: 'Gunakan prompt lengkap untuk v0 atau Lovable.',
         quote: '"Buatkan aplikasi web LaundrySmart. Ada sidebar, order stats, pesanan terbaru, & tombol tambah. Desain modern biru putih. HARUS responsive untuk desktop & HP. Beri data dummy."'
+      },
+      {
+        id: 'tahap-5',
+        title: 'Tahap 5: Generate & Revisi',
+        text: 'Masukkan prompt ke Google AI Studio, v0.app, Lovable, atau Bolt dan tunggu hasilnya.',
+        items: ['Periksa struktur halaman', 'Gunakan perintah revisi: "Buat desain lebih sederhana" atau "Ubah warna utama menjadi hijau"']
       },
       {
         id: 'ishoma',
@@ -375,10 +393,28 @@ export const content = {
         quote: '"I want to build a laundry app. Create a simple concept: name, problem solved, users, features, menu, colors, and business model."'
       },
       {
+        id: 'tahap-2',
+        title: 'Phase 2: Responsive Web Design Concept',
+        text: 'Determine the main pages. Ensure the app works well on Laptops, Tablets, and Smartphones.',
+        items: ['Header & App Name', 'Main Call-to-Action Buttons', 'Transaction List / Statistics', 'Bottom Navigation or Sidebar']
+      },
+      {
+        id: 'tahap-3',
+        title: 'Phase 3: Creating Mockups',
+        text: 'Visualize the layout and colors before coding.',
+        items: ['Use ChatGPT Image, Canva, or Figma', 'Determine button placements, primary colors, and card shapes']
+      },
+      {
         id: 'frontend-prompt',
         title: 'Phase 4: Frontend AI Prompts',
         text: 'Use detailed prompts for v0 or Lovable.',
-        quote: '"Build a web app named LaundrySmart. Include a sidebar, order stats, recent orders, & add button. Modern blue & white design. MUST be responsive. Include dummy data."'
+        quote: '"Create a web app LaundrySmart. Includes sidebar, order stats, latest orders, & add button. Modern blue & white design. MUST be responsive for desktop & mobile. Include dummy data."'
+      },
+      {
+        id: 'tahap-5',
+        title: 'Phase 5: Generate & Revise',
+        text: 'Input your prompt into Google AI Studio, v0.app, Lovable, or Bolt and wait for the result.',
+        items: ['Check the page structure', 'Use revision commands: "Make design simpler" or "Change primary color to green"']
       },
       {
         id: 'ishoma',
