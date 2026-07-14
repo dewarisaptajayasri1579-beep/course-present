@@ -60,54 +60,74 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
         {slidesData.map((slide, index) => (
           <SwiperSlide key={slide.id}>
             {({ isActive }) => (
-              <div className="w-full h-full flex flex-col items-center justify-center p-8 sm:p-16 md:p-24 text-center">
+              <div className="w-full h-full relative flex flex-col items-center justify-center p-8 sm:p-16 md:p-24 text-center">
                 
                 {index === 0 ? (
-                  // Cover Slide
-                  <div className="max-w-5xl w-full relative z-10 flex flex-col items-center space-y-6">
-                    {isActive && (
-                      <>
-                        <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-75 fill-mode-both mb-6">
-                          <style dangerouslySetInnerHTML={{__html: `
-                            @keyframes floatLogo {
-                              0% { transform: translateY(0px); }
-                              50% { transform: translateY(-10px); }
-                              100% { transform: translateY(0px); }
-                            }
-                            .animate-float-logo {
-                              animation: floatLogo 4s ease-in-out infinite;
-                            }
-                          `}} />
-                          <img 
-                            src="/img/logo7smarts.png" 
-                            alt="7Smarts Logo" 
-                            className="w-32 sm:w-48 md:w-56 h-auto object-contain animate-float-logo mx-auto"
-                          />
-                        </div>
-                        <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100 fill-mode-both inline-flex items-center gap-2 mb-2 px-4 py-1.5 rounded-full bg-black/5 border border-black/10 text-black/60 font-medium tracking-widest text-xs uppercase">
-                          <div className="w-2 h-2 rounded-full bg-black/40"></div>
-                          {slide.organization}
-                        </div>
-                        <h1 className="animate-in fade-in slide-in-from-bottom-6 zoom-in-95 duration-700 delay-200 fill-mode-both text-5xl sm:text-7xl md:text-8xl font-medium tracking-tighter text-foreground leading-[1.1]">
-                          {slide.title}
-                        </h1>
-                        <h2 className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300 fill-mode-both text-2xl sm:text-3xl text-muted-foreground max-w-3xl mx-auto font-light tracking-wide mt-4">
-                          {slide.subtitle}
-                        </h2>
-                        <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500 fill-mode-both mt-16 pt-12 border-t border-border max-w-lg mx-auto flex items-center justify-center gap-4">
-                          <div className="w-12 h-12 bg-black/5 rounded-full flex items-center justify-center border border-black/10">
-                            <svg className="w-5 h-5 text-black/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                            </svg>
+                  <>
+                    {/* Cover Slide Background Video */}
+                    <div className="absolute inset-0 z-0 overflow-hidden">
+                      <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="absolute inset-0 w-full h-full object-cover z-0"
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/agentic-hero-9yW3wnTNMfn2U6lsVhTTZSJFEvAoSj.mp4"
+                        style={{
+                          transform: isActive ? "scale(1.05)" : "scale(0.85)",
+                          transition: "transform 2s cubic-bezier(0.16, 1, 0.3, 1)",
+                        }}
+                      />
+                      <div className="absolute inset-x-0 bottom-0 z-10 pointer-events-none" style={{ height: "65%", background: "linear-gradient(to top, var(--background) 0%, rgba(250,250,250,0.85) 35%, rgba(250,250,250,0.5) 55%, transparent 100%)" }} />
+                      <div className="absolute inset-0 bg-background/30 z-10 pointer-events-none backdrop-blur-[2px]" />
+                    </div>
+
+                    {/* Cover Slide Content */}
+                    <div className="max-w-5xl w-full relative z-10 flex flex-col items-center space-y-6">
+                      {isActive && (
+                        <>
+                          <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-75 fill-mode-both mb-6">
+                            <style dangerouslySetInnerHTML={{__html: `
+                              @keyframes floatLogo {
+                                0% { transform: translateY(0px); }
+                                50% { transform: translateY(-10px); }
+                                100% { transform: translateY(0px); }
+                              }
+                              .animate-float-logo {
+                                animation: floatLogo 4s ease-in-out infinite;
+                              }
+                            `}} />
+                            <img 
+                              src="/img/logo7smarts.png" 
+                              alt="7Smarts Logo" 
+                              className="w-32 sm:w-48 md:w-56 h-auto object-contain animate-float-logo mx-auto drop-shadow-xl"
+                            />
                           </div>
-                          <div className="text-left">
-                            <p className="text-xs text-muted-foreground uppercase tracking-widest font-semibold mb-0.5">Presented By</p>
-                            <p className="text-base text-foreground font-medium">{slide.coach}</p>
+                          <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100 fill-mode-both inline-flex items-center gap-2 mb-2 px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-black/10 text-black/80 font-medium tracking-widest text-xs uppercase shadow-sm">
+                            <div className="w-2 h-2 rounded-full bg-black/60"></div>
+                            {slide.organization}
                           </div>
-                        </div>
-                      </>
-                    )}
-                  </div>
+                          <h1 className="animate-in fade-in slide-in-from-bottom-6 zoom-in-95 duration-700 delay-200 fill-mode-both text-5xl sm:text-7xl md:text-8xl font-medium tracking-tighter text-black leading-[1.1] drop-shadow-sm">
+                            {slide.title}
+                          </h1>
+                          <h2 className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300 fill-mode-both text-2xl sm:text-3xl text-black/60 max-w-3xl mx-auto font-light tracking-wide mt-4">
+                            {slide.subtitle}
+                          </h2>
+                          <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500 fill-mode-both mt-16 pt-12 border-t border-black/10 max-w-lg mx-auto flex items-center justify-center gap-4">
+                            <div className="w-12 h-12 bg-white/50 backdrop-blur-md rounded-full flex items-center justify-center border border-black/10 shadow-sm">
+                              <svg className="w-5 h-5 text-black/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                              </svg>
+                            </div>
+                            <div className="text-left">
+                              <p className="text-xs text-black/50 uppercase tracking-widest font-semibold mb-0.5">Presented By</p>
+                              <p className="text-base text-black font-medium">{slide.coach}</p>
+                            </div>
+                          </div>
+                        </>
+                      )}
+                    </div>
+                  </>
                 ) : (
                   // Content Slides
                   <div className="max-w-5xl w-full text-left relative z-10 flex flex-col h-full justify-center">
