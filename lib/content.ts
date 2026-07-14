@@ -1,5 +1,10 @@
 export type Lang = 'id' | 'en';
 
+export interface SlidePoint {
+  title: string;
+  details?: string[];
+}
+
 export const content = {
   id: {
     register: {
@@ -45,32 +50,21 @@ export const content = {
         title: 'SESI 1 (09.00–10.30 WIB)',
         subtitle: 'Mindset, Peluang, dan Konsep Aplikasi',
         items: [
-          'Pembukaan & Perkenalan Peserta',
-          'Siapa Coach Ony Sapta Nugraha?',
-          'Kenapa Harus Jualan Aplikasi?',
-          'Menentukan Ide Aplikasi Anda Hari Ini'
-        ]
-      },
-      {
-        id: 'coach',
-        title: 'Siapa Ony Sapta Nugraha?',
-        items: [
-          '2005-2008: Kuliah Teknik Komputer',
-          '2009-2015: IT, QA, & Audit (Yamaha & Kawasaki)',
-          '2016-2018: Programmer Mandiri (Single Fighter)',
-          '2019-Sekarang: Founder Seven Smarts Indonesia',
-          'Telah menangani 100+ Klien (UMKM, Instansi, Jepang)'
+          { title: 'Pembukaan & Perkenalan Peserta', details: ['Pembukaan oleh coach.', 'Tujuan workshop & penjelasan hasil akhir yang akan dibuat peserta.', 'Masing-masing peserta memperkenalkan diri secara singkat (Nama, Pekerjaan, Pengalaman AI, Ide Aplikasi).'] },
+          { title: 'Siapa Coach Ony Sapta Nugraha?', details: ['Founder Seven Smarts Indonesia', 'Memiliki pengalaman 10+ tahun di bidang IT', 'Telah menangani lebih dari 100 klien dari berbagai wilayah (Jepang, Jakarta, Surabaya, dll)'] },
+          { title: 'Kenapa Harus Jualan Aplikasi?', details: ['Peluang bisnis dengan modal kecil', 'Sangat dibutuhkan di era digital', 'Bisa menjadi Passive Income'] },
+          { title: 'Menentukan Ide Aplikasi Anda Hari Ini', details: ['Sistem kasir, booking, laundry, dsb.', 'Tentukan target pengguna', 'Tentukan model bisnis'] }
         ]
       },
       {
         id: 'peluang',
         title: 'Kenapa Harus Jualan Aplikasi?',
         items: [
-          'Modal Terjangkau (Keahlian, Laptop, Internet, AI)',
-          'Banyak yang Butuh (UMKM, Sekolah, RS, Dinas)',
-          'Passive Income (Pembuatan, Langganan, Maintenance)',
-          'Lebih Mudah Dibuat Berkat AI',
-          'Permintaan Digitalisasi Terus Bertambah'
+          { title: 'Modal Relatif Terjangkau', details: ['Keahlian', 'Kreativitas', 'Laptop', 'Internet', 'Tools AI (Tanpa perlu sewa toko fisik/gudang)'] },
+          { title: 'Banyak yang Membutuhkan', details: ['UMKM', 'Sekolah', 'Rental Mobil / Toko', 'Rumah Sakit / Klinik', 'Dinas Pemerintahan', 'Bisnis Jasa lainnya'] },
+          { title: 'Bisa Menghasilkan Passive Income', details: ['Biaya pembuatan awal', 'Biaya langganan bulanan', 'Biaya maintenance', 'Biaya server tahunan', 'Biaya tambahan fitur / per user'] },
+          { title: 'Sekarang Aplikasi Lebih Mudah Dibuat', details: ['Dibantu ChatGPT untuk konsep', 'Dibantu AI (v0/Lovable) untuk desain & kode frontend', 'Tidak perlu ngetik kode 100% manual lagi'] },
+          { title: 'Permintaan Terus Bertambah', details: ['Semua usaha butuh digitalisasi agar kerja lebih cepat', 'Data lebih rapi & minim kesalahan manusia'] }
         ]
       },
       {
@@ -89,19 +83,19 @@ export const content = {
         title: 'SESI 2 (10.30–12.00 WIB)',
         subtitle: 'Praktik Membuat Aplikasi Dengan AI',
         items: [
-          'Mengenal Tools Konseptor (ChatGPT) & Frontend AI',
-          'Membuat Konsep & Mockup',
-          'Membuat Prompt AI Frontend',
-          'Generate Aplikasi & Revisi'
+          { title: 'Mengenal Tools Konseptor & Frontend', details: ['ChatGPT untuk mengonsep alur', 'Lovable / v0.app / Bolt untuk frontend UI', 'Figma/Canva untuk mockup'] },
+          { title: 'Tahap 1 & 2: Konsep & Desain Responsive', details: ['Menentukan nama aplikasi, tujuan, dan fitur utama via ChatGPT', 'Memastikan aplikasi harus bisa dibuka di Laptop & Smartphone'] },
+          { title: 'Tahap 3 & 4: Mockup & Prompt AI Frontend', details: ['Menyiapkan visual sederhana', 'Menulis prompt detail: gaya desain, warna, letak menu, dll'] },
+          { title: 'Tahap 5: Generate Aplikasi & Revisi', details: ['Memasukkan prompt ke tools', 'Memeriksa hasil pertama', 'Menambahkan instruksi revisi (misal: "ubah warna tombol jadi merah")'] }
         ]
       },
       {
         id: 'tools',
         title: 'Mengenal Tools AI',
         items: [
-          'Tools Konseptor: ChatGPT (Ide, Alur, Prompt)',
-          'Tools Frontend AI: v0.app, Lovable, Bolt, atau Google AI Studio',
-          'Tools Desain (Mockup): ChatGPT Image, Canva'
+          { title: 'Tools Konseptor (ChatGPT)', details: ['Mengembangkan ide & alur aplikasi', 'Menentukan fitur dan pengguna aplikasi', 'Membuat struktur menu & prompt'] },
+          { title: 'Tools Frontend AI (v0, Lovable, Bolt)', details: ['Membuat tampilan responsive', 'Menghasilkan kode frontend otomatis', 'Mengubah desain hanya dengan chat (prompt)'] },
+          { title: 'Tools Mockup (ChatGPT Image, Canva)', details: ['Gambaran visual sebelum aplikasi di-generate', 'Memastikan posisi tombol dan warna'] }
         ]
       },
       {
@@ -127,19 +121,18 @@ export const content = {
         title: 'SESI 3 (13.00–15.00 WIB)',
         subtitle: 'Online-kan Aplikasi, Testing, dan Kompetisi',
         items: [
-          'Menyempurnakan Aplikasi (Revisi)',
-          'Mengenal & Upload ke GitHub',
-          'Deploy Aplikasi ke Vercel',
-          'Testing & Penilaian (Kompetisi)'
+          { title: 'Menyempurnakan Aplikasi', details: ['Memastikan navigasi bekerja', 'Tampilan mobile rapi', 'Data dummy relevan'] },
+          { title: 'Mengenal & Upload ke GitHub', details: ['Menyimpan source code ke repository', 'Membuat akun GitHub'] },
+          { title: 'Deploy Aplikasi ke Vercel', details: ['Menghubungkan GitHub ke Vercel', 'Mendapatkan link aplikasi untuk dipamerkan'] },
+          { title: 'Testing & Penilaian', details: ['Memastikan semua tombol dan desain tidak error', 'Penilaian dilakukan via AI dan Coach'] }
         ]
       },
       {
         id: 'github-vercel',
         title: 'GitHub & Vercel',
         items: [
-          'GitHub: Tempat menyimpan kode (Repository) & Kolaborasi',
-          'Vercel: Meng-online-kan aplikasi secara otomatis dari GitHub',
-          'Keduanya gratis dan menjadi standar industri web modern'
+          { title: 'GitHub', details: ['Tempat menyimpan source code', 'Mengelola versi aplikasi', 'Berkolaborasi dengan programmer lain'] },
+          { title: 'Vercel', details: ['Meng-online-kan aplikasi (hosting gratis)', 'Otomatis update (deploy) saat kode berubah di GitHub'] }
         ]
       },
       {
@@ -147,11 +140,10 @@ export const content = {
         title: 'Penilaian & Kompetisi',
         text: 'Nilai Akhir = AI 30% + Coach 40% + Testing 20% + Presentasi 10%',
         items: [
-          'Kejelasan ide dan masalah (15%)',
-          'Manfaat & Kelengkapan Fitur (30%)',
-          'Desain UI & Kemudahan (20%)',
-          'Responsive & Fungsi (25%)',
-          'Presentasi (10%)'
+          { title: 'Kejelasan ide & Manfaat (30%)', details: ['Apakah target pasar jelas?', 'Apakah bisa dijual?'] },
+          { title: 'Desain UI & Kemudahan (20%)', details: ['Warna konsisten', 'Tulisan mudah dibaca', 'Navigasi jelas'] },
+          { title: 'Responsive & Fungsi (25%)', details: ['Bisa dibuka di HP tanpa rusak', 'Tidak ada error atau tombol mati'] },
+          { title: 'Kelengkapan Fitur & Presentasi (25%)', details: ['Presentasi meyakinkan', 'Fitur utama terpenuhi'] }
         ]
       },
       {
@@ -243,32 +235,20 @@ export const content = {
         title: 'SESSION 1 (09.00–10.30)',
         subtitle: 'Mindset, Opportunities, and App Concepts',
         items: [
-          'Opening & Introductions',
-          'Who is Coach Ony?',
-          'Why the App Business?',
-          'Determine Your App Idea Today'
-        ]
-      },
-      {
-        id: 'coach',
-        title: 'Who is Ony Sapta Nugraha?',
-        items: [
-          '2005-2008: Computer Engineering Degree',
-          '2009-2015: IT, QA, & Audit (Yamaha & Kawasaki)',
-          '2016-2018: Indie Programmer',
-          '2019-Present: Founder of Seven Smarts Indonesia',
-          'Handled 100+ Clients globally'
+          { title: 'Opening & Introductions', details: ['Workshop goals', 'Personal intros'] },
+          { title: 'Who is Coach Ony?', details: ['Founder Seven Smarts Indonesia', '10+ years experience'] },
+          { title: 'Why the App Business?', details: ['High Demand', 'Low Capital', 'Passive Income'] },
+          { title: 'Determine Your App Idea Today', details: ['Pick a simple problem to solve'] }
         ]
       },
       {
         id: 'peluang',
         title: 'Why the App Business?',
         items: [
-          'Low Capital (Skill, Laptop, Internet, AI)',
-          'High Demand (SMEs, Schools, Agencies)',
-          'Passive Income (Subscriptions, Maintenance)',
-          'Development is Much Faster with AI',
-          'Constant Need for Digitalization'
+          { title: 'Low Capital', details: ['Only needs laptop, internet, and AI tools'] },
+          { title: 'High Demand', details: ['SMEs, Schools, Clinics, Agencies'] },
+          { title: 'Passive Income', details: ['Monthly subscriptions', 'Maintenance fees'] },
+          { title: 'Easier to Build', details: ['AI generates code and designs'] }
         ]
       },
       {
@@ -287,19 +267,19 @@ export const content = {
         title: 'SESSION 2 (10.30–12.00)',
         subtitle: 'Practice Building Apps with AI',
         items: [
-          'Intro to Conceptual & Frontend AI Tools',
-          'Drafting Concepts & Mockups',
-          'Writing Frontend AI Prompts',
-          'Generating App & Revisions'
+          { title: 'Intro to AI Tools', details: ['ChatGPT for concept', 'Lovable/v0 for frontend'] },
+          { title: 'Drafting Concepts', details: ['Define features and flows'] },
+          { title: 'Writing Prompts', details: ['Structuring instructions for AI'] },
+          { title: 'Generating App', details: ['Deploying UI and revising iteratively'] }
         ]
       },
       {
         id: 'tools',
         title: 'AI Tools Overview',
         items: [
-          'Concept Tools: ChatGPT (Ideas, Flows, Prompts)',
-          'Frontend AI Tools: v0.app, Lovable, Bolt',
-          'Design Tools: ChatGPT Image, Canva'
+          { title: 'Concept Tools (ChatGPT)', details: ['Ideas, Flows, Prompts'] },
+          { title: 'Frontend AI (v0, Lovable)', details: ['Generates interactive code'] },
+          { title: 'Design Tools (Canva)', details: ['Mockups'] }
         ]
       },
       {
@@ -325,19 +305,18 @@ export const content = {
         title: 'SESSION 3 (13.00–15.00)',
         subtitle: 'Deploying, Testing, and Competition',
         items: [
-          'Refining the App (Revisions)',
-          'GitHub Intro & Upload',
-          'Deploying to Vercel',
-          'Testing & Competition Scoring'
+          { title: 'Refining the App', details: ['Fixing bugs, responsive checks'] },
+          { title: 'GitHub Upload', details: ['Saving code to repository'] },
+          { title: 'Deploying to Vercel', details: ['Getting the live link'] },
+          { title: 'Testing & Competition', details: ['Scoring by Coach & AI'] }
         ]
       },
       {
         id: 'github-vercel',
         title: 'GitHub & Vercel',
         items: [
-          'GitHub: Code storage repository & collaboration',
-          'Vercel: Automatic deployment from GitHub',
-          'Both are free and industry standard'
+          { title: 'GitHub', details: ['Code storage repository & collaboration'] },
+          { title: 'Vercel', details: ['Automatic deployment from GitHub'] }
         ]
       },
       {
@@ -345,11 +324,9 @@ export const content = {
         title: 'Competition & Scoring',
         text: 'Final Score = AI 30% + Coach 40% + Testing 20% + Presentation 10%',
         items: [
-          'Idea Clarity (15%)',
-          'Utility & Features (30%)',
-          'UI Design & Usability (20%)',
-          'Responsiveness & Function (25%)',
-          'Presentation (10%)'
+          { title: 'Utility & Ideas (30%)', details: ['Business potential'] },
+          { title: 'UI Design (20%)', details: ['Clean, accessible'] },
+          { title: 'Responsiveness (25%)', details: ['Works on mobile'] }
         ]
       },
       {

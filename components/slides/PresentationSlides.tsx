@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Keyboard, EffectFade } from 'swiper/modules';
 import 'swiper/css';
@@ -8,19 +8,33 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
+// Copied from content.ts to type the props locally
+export interface SlidePoint {
+  title: string;
+  details?: string[];
+}
+
 interface SlideItem {
   id: string;
   title: string;
   subtitle?: string;
   coach?: string;
   organization?: string;
-  items?: string[];
+  items?: (string | SlidePoint)[];
   text?: string;
   quote?: string;
 }
 
 export default function PresentationSlides({ slidesData }: { slidesData: SlideItem[] }) {
-  // We use this state to re-trigger animations whenever the active index changes
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
@@ -96,16 +110,66 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
 
                         {slide.items && (
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
-                            {slide.items.map((item, i) => (
-                              <div key={i} className={`animate-in fade-in slide-in-from-bottom-4 zoom-in-[0.98] duration-500 fill-mode-both flex items-start bg-card p-5 rounded-2xl border border-border hover:border-black/20 hover:shadow-sm transition-all duration-300 group/card`} style={{ animationDelay: `${300 + (i * 100)}ms` }}>
-                                <div className="bg-black/5 p-2 rounded-lg mr-4 mt-0.5 text-black/40 group-hover/card:bg-black group-hover/card:text-white transition-colors">
-                                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                                  </svg>
+                            {slide.items.map((item, i) => {
+                              const isString = typeof item === 'string';
+                              const title = isString ? item : item.title;
+                              const hasDetails = !isString && item.details && item.details.length > 0;
+                              
+                              const CardContent = (
+                                <div className={`flex items-start bg-card p-5 rounded-2xl border border-border transition-all duration-300 group/card text-left h-full ${hasDetails ? 'hover:border-black/30 hover:shadow-md cursor-pointer hover:bg-black/5' : 'hover:border-black/20 hover:shadow-sm'}`}>
+                                  <div className="bg-black/5 p-2 rounded-lg mr-4 mt-0.5 text-black/40 group-hover/card:bg-black group-hover/card:text-white transition-colors">
+                                    {hasDetails ? (
+                                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4v16m8-8H4" />
+                                      </svg>
+                                    ) : (
+                                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                                      </svg>
+                                    )}
+                                  </div>
+                                  <div className="flex-1">
+                                    <span className="text-lg text-foreground/80 leading-relaxed font-medium tracking-tight block">{title}</span>
+                                    {hasDetails && (
+                                      <span className="text-xs text-muted-foreground mt-1.5 font-medium tracking-wide block uppercase">Klik untuk detail &rarr;</span>
+                                    )}
+                                  </div>
                                 </div>
-                                <span className="text-lg text-foreground/80 leading-relaxed font-medium tracking-tight">{item}</span>
-                              </div>
-                            ))}
+                              );
+
+                              return (
+                                <div key={i} className={`animate-in fade-in slide-in-from-bottom-4 zoom-in-[0.98] duration-500 fill-mode-both`} style={{ animationDelay: `${300 + (i * 100)}ms` }}>
+                                  {hasDetails ? (
+                                    <Dialog>
+                                      <DialogTrigger asChild>
+                                        {CardContent}
+                                      </DialogTrigger>
+                                      <DialogContent className="sm:max-w-xl">
+                                        <DialogHeader>
+                                          <DialogTitle className="text-2xl font-medium tracking-tight">{title}</DialogTitle>
+                                        </DialogHeader>
+                                        <div className="mt-4 space-y-4">
+                                          {(!isString && item.details) && (
+                                            <ul className="space-y-3">
+                                              {item.details.map((detail, idx) => (
+                                                <li key={idx} className="flex items-start text-foreground/70">
+                                                  <svg className="w-5 h-5 mr-3 text-black/40 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                  </svg>
+                                                  <span className="text-lg leading-relaxed">{detail}</span>
+                                                </li>
+                                              ))}
+                                            </ul>
+                                          )}
+                                        </div>
+                                      </DialogContent>
+                                    </Dialog>
+                                  ) : (
+                                    CardContent
+                                  )}
+                                </div>
+                              );
+                            })}
                           </div>
                         )}
 
