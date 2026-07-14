@@ -142,7 +142,7 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
                   </>
                 ) : (
                   // Content Slides
-                  <div className={`w-full text-left relative z-10 flex flex-col ${(slide.bottomImages || slide.videoUrl) ? 'h-full overflow-y-auto hide-scrollbar pt-12 pb-32 justify-start' : 'h-full justify-center'} max-w-5xl mx-auto`}>
+                  <div className={`w-full text-left relative z-10 flex flex-col ${(slide.bottomImages || slide.videoUrl || slide.browserTabs) ? 'h-full overflow-y-auto hide-scrollbar pt-12 pb-32 justify-start' : 'h-full justify-center'} max-w-5xl mx-auto`}>
                     {isActive && (
                       <div className="flex flex-col w-full justify-start">
                         <div className="flex flex-col justify-center">
