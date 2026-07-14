@@ -15,6 +15,7 @@ interface SlideVirtualBrowserProps {
 
 export function SlideVirtualBrowser({ tabs }: SlideVirtualBrowserProps) {
   const [activeTabId, setActiveTabId] = useState(tabs[0]?.id);
+  const [isImageMode, setIsImageMode] = useState(false);
 
   const activeTab = tabs.find(t => t.id === activeTabId) || tabs[0];
 
@@ -64,6 +65,13 @@ export function SlideVirtualBrowser({ tabs }: SlideVirtualBrowserProps) {
             <svg className="w-3 h-3 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
             {activeTab?.url || activeTab?.imageSrc || 'https://...'}
           </div>
+          <button 
+            onClick={() => setIsImageMode(!isImageMode)}
+            className={`ml-2 px-3 py-1 text-[10px] sm:text-xs font-medium rounded-md transition-colors border ${isImageMode ? 'bg-black text-white border-black' : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-100'} whitespace-nowrap`}
+            title="Toggle between Live Website and Screenshot"
+          >
+            {isImageMode ? '🖼️ Image Mode' : '🌐 Live Mode'}
+          </button>
         </div>
 
         {/* Browser Content */}
@@ -75,7 +83,7 @@ export function SlideVirtualBrowser({ tabs }: SlideVirtualBrowserProps) {
                 activeTabId === tab.id ? 'opacity-100 z-10 pointer-events-auto' : 'opacity-0 z-0 pointer-events-none'
               }`}
             >
-              {tab.url ? (
+              {!isImageMode && tab.url ? (
                 /* Scaled Iframe */
                 <div className="w-full h-full relative overflow-hidden bg-white flex items-center justify-center">
                    {/* We scale the iframe by 1.5. Width/height needs to be 100% / 1.5 */}

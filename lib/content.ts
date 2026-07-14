@@ -141,11 +141,11 @@ export const content = {
           { title: 'Tools Mockup (ChatGPT Image, Canva)', details: ['Gambaran visual sebelum aplikasi di-generate', 'Memastikan posisi tombol dan warna'] }
         ],
         browserTabs: [
-          { id: 'chatgpt', label: 'ChatGPT', url: 'https://chatgpt.com', imageSrc: '/img/tools/chatgpt.png' },
-          { id: 'lovable', label: 'Lovable', url: 'https://lovable.dev', imageSrc: '/img/tools/lovable.png' },
-          { id: 'v0', label: 'v0.app', url: 'https://v0.dev', imageSrc: '/img/tools/v0.png' },
-          { id: 'bolt', label: 'Bolt', url: 'https://bolt.new', imageSrc: '/img/tools/bolt.png' },
-          { id: 'canva', label: 'Canva', url: 'https://canva.com', imageSrc: '/img/tools/canva.png' }
+          { id: 'chatgpt', label: 'ChatGPT', url: 'https://chatgpt.com', imageSrc: '/img/chatgpt.png' },
+          { id: 'lovable', label: 'Lovable', url: 'https://lovable.dev', imageSrc: '/img/lovable.png' },
+          { id: 'v0', label: 'v0.app', url: 'https://v0.dev', imageSrc: '/img/v0.png' },
+          { id: 'bolt', label: 'Bolt', url: 'https://bolt.new', imageSrc: '/img/bolt.png' },
+          { id: 'canva', label: 'Canva', url: 'https://canva.com', imageSrc: '/img/canva.png' }
         ]
       },
       {
@@ -393,11 +393,11 @@ export const content = {
           { title: 'Design Tools (Canva)', details: ['Mockups'] }
         ],
         browserTabs: [
-          { id: 'chatgpt', label: 'ChatGPT', url: 'https://chatgpt.com', imageSrc: '/img/tools/chatgpt.png' },
-          { id: 'lovable', label: 'Lovable', url: 'https://lovable.dev', imageSrc: '/img/tools/lovable.png' },
-          { id: 'v0', label: 'v0.app', url: 'https://v0.dev', imageSrc: '/img/tools/v0.png' },
-          { id: 'bolt', label: 'Bolt', url: 'https://bolt.new', imageSrc: '/img/tools/bolt.png' },
-          { id: 'canva', label: 'Canva', url: 'https://canva.com', imageSrc: '/img/tools/canva.png' }
+          { id: 'chatgpt', label: 'ChatGPT', url: 'https://chatgpt.com', imageSrc: '/img/chatgpt.png' },
+          { id: 'lovable', label: 'Lovable', url: 'https://lovable.dev', imageSrc: '/img/lovable.png' },
+          { id: 'v0', label: 'v0.app', url: 'https://v0.dev', imageSrc: '/img/v0.png' },
+          { id: 'bolt', label: 'Bolt', url: 'https://bolt.new', imageSrc: '/img/bolt.png' },
+          { id: 'canva', label: 'Canva', url: 'https://canva.com', imageSrc: '/img/canva.png' }
         ]
       },
       {
