@@ -8,17 +8,17 @@ export const content = {
       nameLabel: 'Nama Lengkap',
       namePlaceholder: 'Masukkan nama Anda',
       originLabel: 'Asal / Pekerjaan',
-      originPlaceholder: 'Misal: Mahasiswa, Pemilik UMKM, dll',
+      originPlaceholder: 'Misal: Mahasiswa, UMKM, dll',
       expLabel: 'Pengalaman Menggunakan AI',
-      expPlaceholder: 'Misal: Pernah pakai ChatGPT untuk buat artikel',
-      ideaLabel: 'Ide Aplikasi yang Ingin Dibuat',
-      ideaPlaceholder: 'Misal: Aplikasi pencatatan kasbon',
+      expPlaceholder: 'Misal: Pernah pakai ChatGPT',
+      ideaLabel: 'Ide Aplikasi',
+      ideaPlaceholder: 'Misal: Aplikasi Kasir',
       submit: 'Daftar Sekarang',
       submitting: 'Mendaftar...',
       successTitle: 'Berhasil Mendaftar!',
       successMessage: 'Sampai jumpa di workshop.',
-      errorFull: 'Maaf, kuota registrasi sudah penuh (maksimal 8 peserta).',
-      errorGeneric: 'Terjadi kesalahan. Silakan coba lagi.',
+      errorFull: 'Maaf, kuota registrasi sudah penuh.',
+      errorGeneric: 'Terjadi kesalahan.',
     },
     slides: [
       {
@@ -29,15 +29,26 @@ export const content = {
         organization: 'Seven Smarts Indonesia'
       },
       {
-        id: 'outcome',
+        id: 'hasil',
         title: 'Hasil yang Akan Didapatkan',
         items: [
           'Memahami peluang bisnis pembuatan aplikasi',
           'Mengetahui tahapan dari ide sampai online',
-          'Membuat konsep dengan ChatGPT',
-          'Membuat frontend aplikasi dengan AI (Lovable/Bolt/v0)',
-          'Mempraktikkan GitHub & Vercel',
-          'Memiliki 1 aplikasi yang online & siap jual'
+          'Mampu membuat konsep aplikasi menggunakan ChatGPT',
+          'Mampu menggunakan tools AI untuk frontend (Lovable/v0)',
+          'Memahami dasar penggunaan GitHub dan Vercel',
+          'Memiliki 1 aplikasi sederhana yang online & siap jual'
+        ]
+      },
+      {
+        id: 'sesi-1',
+        title: 'SESI 1 (09.00–10.30 WIB)',
+        subtitle: 'Mindset, Peluang, dan Konsep Aplikasi',
+        items: [
+          'Pembukaan & Perkenalan Peserta',
+          'Siapa Coach Ony Sapta Nugraha?',
+          'Kenapa Harus Jualan Aplikasi?',
+          'Menentukan Ide Aplikasi Anda Hari Ini'
         ]
       },
       {
@@ -45,54 +56,65 @@ export const content = {
         title: 'Siapa Ony Sapta Nugraha?',
         items: [
           '2005-2008: Kuliah Teknik Komputer',
-          '2009-2014: IT & QA di Yamaha',
-          '2014-2015: Audit Operasional di Kawasaki',
+          '2009-2015: IT, QA, & Audit (Yamaha & Kawasaki)',
           '2016-2018: Programmer Mandiri (Single Fighter)',
-          '2019-Sekarang: Founder Seven Smarts Indonesia (100+ Klien)'
+          '2019-Sekarang: Founder Seven Smarts Indonesia',
+          'Telah menangani 100+ Klien (UMKM, Instansi, Jepang)'
         ]
       },
       {
-        id: 'why-apps',
-        title: 'Kenapa Bisnis Aplikasi?',
+        id: 'peluang',
+        title: 'Kenapa Harus Jualan Aplikasi?',
         items: [
-          'Modal Relatif Terjangkau (Skill, Laptop, AI, Internet)',
-          'Permintaan Sangat Tinggi (UMKM, Sekolah, RS, Dinas, dll)',
-          'Potensi Passive Income (Langganan, Server, Maintenance)',
-          'Pembuatan Makin Cepat berkat AI'
+          'Modal Terjangkau (Keahlian, Laptop, Internet, AI)',
+          'Banyak yang Butuh (UMKM, Sekolah, RS, Dinas)',
+          'Passive Income (Pembuatan, Langganan, Maintenance)',
+          'Lebih Mudah Dibuat Berkat AI',
+          'Permintaan Digitalisasi Terus Bertambah'
         ]
       },
       {
-        id: 'ideation',
-        title: 'Sesi 1: Menentukan Ide',
-        text: 'Tentukan 1 ide aplikasi Anda hari ini:',
+        id: 'ide',
+        title: 'Menentukan Ide Aplikasi',
+        text: 'Tentukan SATU ide aplikasi hari ini. Contoh:',
         items: [
           'Aplikasi Kasir / POS',
           'Sistem Booking (Rental, Lapangan)',
-          'Pencatatan Keuangan',
-          'Aplikasi Absensi',
-          'Aplikasi Pengelolaan Kos/Laundry'
+          'Pencatatan Keuangan / Laundry / Kos',
+          'Aplikasi Absensi'
         ]
       },
       {
-        id: 'ai-tools',
-        title: 'Tools AI yang Akan Digunakan',
+        id: 'sesi-2',
+        title: 'SESI 2 (10.30–12.00 WIB)',
+        subtitle: 'Praktik Membuat Aplikasi Dengan AI',
         items: [
-          'ChatGPT: Untuk konseptor, ide, fitur, & alur',
-          'Frontend AI: Lovable, Bolt, v0, atau Google AI Studio',
-          'Tujuan Frontend AI: Generate UI, Layout, Warna, dan Kode React/Next.js'
+          'Mengenal Tools Konseptor (ChatGPT) & Frontend AI',
+          'Membuat Konsep & Mockup',
+          'Membuat Prompt AI Frontend',
+          'Generate Aplikasi & Revisi'
         ]
       },
       {
-        id: 'chatgpt-prompt',
+        id: 'tools',
+        title: 'Mengenal Tools AI',
+        items: [
+          'Tools Konseptor: ChatGPT (Ide, Alur, Prompt)',
+          'Tools Frontend AI: v0.app, Lovable, Bolt, atau Google AI Studio',
+          'Tools Desain (Mockup): ChatGPT Image, Canva'
+        ]
+      },
+      {
+        id: 'konsep-chatgpt',
         title: 'Tahap 1: Konsep di ChatGPT',
-        text: 'Contoh Prompt:',
-        quote: '"Saya ingin membuat aplikasi laundry. Buatkan konsep sederhana: nama, target pengguna, fitur utama, struktur menu, warna, dan model bisnisnya."'
+        text: 'Gunakan ChatGPT untuk membuat konsep aplikasi (Nama, Tujuan, Target Pengguna, Fitur, Menu).',
+        quote: '"Saya ingin membuat aplikasi laundry. Buatkan konsep sederhana: nama, masalah yang diselesaikan, pengguna, fitur utama, menu, warna, dan bisnis model."'
       },
       {
         id: 'frontend-prompt',
-        title: 'Tahap 2: Prompt Frontend AI',
-        text: 'Contoh Prompt:',
-        quote: '"Buatkan aplikasi web LaundrySmart. Ada sidebar, statistik pesanan, daftar pesanan terbaru, dan tombol tambah pesanan. Warna biru & putih. Harus responsive."'
+        title: 'Tahap 4: Prompt Frontend AI',
+        text: 'Gunakan prompt lengkap untuk v0 atau Lovable.',
+        quote: '"Buatkan aplikasi web LaundrySmart. Ada sidebar, order stats, pesanan terbaru, & tombol tambah. Desain modern biru putih. HARUS responsive untuk desktop & HP. Beri data dummy."'
       },
       {
         id: 'cheat-code',
@@ -106,24 +128,48 @@ export const content = {
         ]
       },
       {
-        id: 'github-vercel',
-        title: 'Tahap 3: Online-kan (Deploy)',
+        id: 'ishoma',
+        title: 'ISHOMA (12.00–13.00)',
+        subtitle: 'Istirahat, Salat, dan Makan',
+        text: 'Jangan lupa simpan prompt, link aplikasi, dan akun AI Anda.'
+      },
+      {
+        id: 'sesi-3',
+        title: 'SESI 3 (13.00–15.00 WIB)',
+        subtitle: 'Online-kan Aplikasi, Testing, dan Kompetisi',
         items: [
-          'GitHub: Tempat menyimpan kode (Repository)',
-          'Vercel: Tempat meng-online-kan aplikasi',
-          'Keduanya Gratis untuk tahap awal!'
+          'Menyempurnakan Aplikasi (Revisi)',
+          'Mengenal & Upload ke GitHub',
+          'Deploy Aplikasi ke Vercel',
+          'Testing & Penilaian (Kompetisi)'
         ]
       },
       {
-        id: 'competition',
-        title: 'Kompetisi & Penilaian',
+        id: 'github-vercel',
+        title: 'GitHub & Vercel',
         items: [
-          'Kejelasan ide & Manfaat (30%)',
-          'Desain UI & Responsive (30%)',
-          'Kelengkapan Fitur & Fungsi (30%)',
-          'Presentasi (10%)',
-          'Juri dibantu oleh AI!'
+          'GitHub: Tempat menyimpan kode (Repository) & Kolaborasi',
+          'Vercel: Meng-online-kan aplikasi secara otomatis dari GitHub',
+          'Keduanya gratis dan menjadi standar industri web modern'
         ]
+      },
+      {
+        id: 'kompetisi',
+        title: 'Penilaian & Kompetisi',
+        text: 'Nilai Akhir = AI 30% + Coach 40% + Testing 20% + Presentasi 10%',
+        items: [
+          'Kejelasan ide dan masalah (15%)',
+          'Manfaat & Kelengkapan Fitur (30%)',
+          'Desain UI & Kemudahan (20%)',
+          'Responsive & Fungsi (25%)',
+          'Presentasi (10%)'
+        ]
+      },
+      {
+        id: 'penutup',
+        title: 'Selesai!',
+        subtitle: 'Pengumuman Pemenang & Penutupan',
+        text: 'Terus kembangkan aplikasi Anda dan jadikan portfolio profesional!'
       }
     ],
     handout: {
@@ -175,15 +221,15 @@ export const content = {
       originLabel: 'Origin / Occupation',
       originPlaceholder: 'E.g.: Student, Business Owner, etc.',
       expLabel: 'AI Experience',
-      expPlaceholder: 'E.g.: Used ChatGPT for writing articles',
-      ideaLabel: 'App Idea You Want to Build',
-      ideaPlaceholder: 'E.g.: Expense tracker app',
+      expPlaceholder: 'E.g.: Used ChatGPT',
+      ideaLabel: 'App Idea',
+      ideaPlaceholder: 'E.g.: POS App',
       submit: 'Register Now',
       submitting: 'Registering...',
-      successTitle: 'Registration Successful!',
+      successTitle: 'Success!',
       successMessage: 'See you at the workshop.',
-      errorFull: 'Sorry, the registration is full (max 8 participants).',
-      errorGeneric: 'An error occurred. Please try again.',
+      errorFull: 'Sorry, the registration is full.',
+      errorGeneric: 'An error occurred.',
     },
     slides: [
       {
@@ -194,15 +240,26 @@ export const content = {
         organization: 'Seven Smarts Indonesia'
       },
       {
-        id: 'outcome',
+        id: 'hasil',
         title: 'What You Will Achieve',
         items: [
-          'Understand the app business opportunities',
-          'Learn the lifecycle from idea to deployment',
+          'Understand app business opportunities',
+          'Learn the lifecycle from idea to online',
           'Draft app concepts using ChatGPT',
-          'Generate app frontend with AI (Lovable/Bolt/v0)',
-          'Practice GitHub & Vercel deployment',
-          'Go home with 1 fully deployed app ready to sell'
+          'Generate frontend with AI (Lovable/v0)',
+          'Master basics of GitHub and Vercel',
+          'Possess 1 simple app deployed & ready to sell'
+        ]
+      },
+      {
+        id: 'sesi-1',
+        title: 'SESSION 1 (09.00–10.30)',
+        subtitle: 'Mindset, Opportunities, and App Concepts',
+        items: [
+          'Opening & Introductions',
+          'Who is Coach Ony?',
+          'Why the App Business?',
+          'Determine Your App Idea Today'
         ]
       },
       {
@@ -210,54 +267,65 @@ export const content = {
         title: 'Who is Ony Sapta Nugraha?',
         items: [
           '2005-2008: Computer Engineering Degree',
-          '2009-2014: IT & QA at Yamaha',
-          '2014-2015: Operational Audit at Kawasaki',
-          '2016-2018: Indie Programmer (Single Fighter)',
-          '2019-Present: Founder of Seven Smarts Indonesia (100+ Clients)'
+          '2009-2015: IT, QA, & Audit (Yamaha & Kawasaki)',
+          '2016-2018: Indie Programmer',
+          '2019-Present: Founder of Seven Smarts Indonesia',
+          'Handled 100+ Clients globally'
         ]
       },
       {
-        id: 'why-apps',
+        id: 'peluang',
         title: 'Why the App Business?',
         items: [
-          'Low Capital (Needs Skill, Laptop, AI, Internet)',
-          'High Demand (SMEs, Schools, Clinics, Agencies)',
-          'Passive Income Potential (Subscriptions, Maintenance)',
-          'Development is Much Faster with AI'
+          'Low Capital (Skill, Laptop, Internet, AI)',
+          'High Demand (SMEs, Schools, Agencies)',
+          'Passive Income (Subscriptions, Maintenance)',
+          'Development is Much Faster with AI',
+          'Constant Need for Digitalization'
         ]
       },
       {
-        id: 'ideation',
-        title: 'Session 1: Finding an Idea',
-        text: 'Pick 1 app idea to build today:',
+        id: 'ide',
+        title: 'Finding Your App Idea',
+        text: 'Pick ONE app idea today. Examples:',
         items: [
           'POS / Cashier App',
           'Booking System (Rentals, Venues)',
-          'Expense Tracker',
-          'Attendance App',
-          'Laundry / Boarding House Manager'
+          'Expense Tracker / Boarding House Manager',
+          'Attendance App'
         ]
       },
       {
-        id: 'ai-tools',
-        title: 'AI Tools We Will Use',
+        id: 'sesi-2',
+        title: 'SESSION 2 (10.30–12.00)',
+        subtitle: 'Practice Building Apps with AI',
         items: [
-          'ChatGPT: For concepts, ideas, features, & flows',
-          'Frontend AI: Lovable, Bolt, v0, or Google AI Studio',
-          'Purpose: Generate UI, layouts, colors, and React/Next.js code'
+          'Intro to Conceptual & Frontend AI Tools',
+          'Drafting Concepts & Mockups',
+          'Writing Frontend AI Prompts',
+          'Generating App & Revisions'
         ]
       },
       {
-        id: 'chatgpt-prompt',
-        title: 'Phase 1: ChatGPT Concept',
-        text: 'Example Prompt:',
-        quote: '"I want to build a laundry app. Create a simple concept: name, target users, core features, menu structure, colors, and business model."'
+        id: 'tools',
+        title: 'AI Tools Overview',
+        items: [
+          'Concept Tools: ChatGPT (Ideas, Flows, Prompts)',
+          'Frontend AI Tools: v0.app, Lovable, Bolt',
+          'Design Tools: ChatGPT Image, Canva'
+        ]
+      },
+      {
+        id: 'konsep-chatgpt',
+        title: 'Phase 1: ChatGPT Concepts',
+        text: 'Use ChatGPT to structure your app (Name, Goal, Users, Features, Menus).',
+        quote: '"I want to build a laundry app. Create a simple concept: name, problem solved, users, features, menu, colors, and business model."'
       },
       {
         id: 'frontend-prompt',
-        title: 'Phase 2: Frontend AI Prompt',
-        text: 'Example Prompt:',
-        quote: '"Build a web app named LaundrySmart. Include a sidebar, order stats, recent orders list, and an add order button. Use blue & white colors. Make it responsive."'
+        title: 'Phase 4: Frontend AI Prompts',
+        text: 'Use detailed prompts for v0 or Lovable.',
+        quote: '"Build a web app named LaundrySmart. Include a sidebar, order stats, recent orders, & add button. Modern blue & white design. MUST be responsive. Include dummy data."'
       },
       {
         id: 'cheat-code',
@@ -271,24 +339,48 @@ export const content = {
         ]
       },
       {
-        id: 'github-vercel',
-        title: 'Phase 3: Deploy (Go Live)',
+        id: 'ishoma',
+        title: 'BREAK (12.00–13.00)',
+        subtitle: 'Lunch and Prayer Break',
+        text: 'Remember to save your prompts, app links, and accounts.'
+      },
+      {
+        id: 'sesi-3',
+        title: 'SESSION 3 (13.00–15.00)',
+        subtitle: 'Deploying, Testing, and Competition',
         items: [
-          'GitHub: Where we store our code (Repository)',
-          'Vercel: Where we host the application',
-          'Both are Free for starting out!'
+          'Refining the App (Revisions)',
+          'GitHub Intro & Upload',
+          'Deploying to Vercel',
+          'Testing & Competition Scoring'
         ]
       },
       {
-        id: 'competition',
-        title: 'Competition & Scoring',
+        id: 'github-vercel',
+        title: 'GitHub & Vercel',
         items: [
-          'Idea Clarity & Utility (30%)',
-          'UI Design & Responsiveness (30%)',
-          'Feature Completeness & Function (30%)',
-          'Presentation (10%)',
-          'Judges assisted by AI!'
+          'GitHub: Code storage repository & collaboration',
+          'Vercel: Automatic deployment from GitHub',
+          'Both are free and industry standard'
         ]
+      },
+      {
+        id: 'kompetisi',
+        title: 'Competition & Scoring',
+        text: 'Final Score = AI 30% + Coach 40% + Testing 20% + Presentation 10%',
+        items: [
+          'Idea Clarity (15%)',
+          'Utility & Features (30%)',
+          'UI Design & Usability (20%)',
+          'Responsiveness & Function (25%)',
+          'Presentation (10%)'
+        ]
+      },
+      {
+        id: 'penutup',
+        title: 'Finish!',
+        subtitle: 'Winners & Closing',
+        text: 'Keep developing your app and use it as a professional portfolio!'
       }
     ],
     handout: {
@@ -325,8 +417,8 @@ export const content = {
           'All main buttons are clickable / working',
           'Colors are visually appealing (not too bright)',
           'Successfully deployed to Vercel (Has a Link)',
-          'Dummy data has been replaced / relevant',
-          'App screenshots are ready for submission'
+          'Dummy data has been modified / relevant',
+          'App screenshots taken for submission'
         ]
       }
     }
