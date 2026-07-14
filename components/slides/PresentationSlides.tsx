@@ -138,10 +138,11 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
                   </>
                 ) : (
                   // Content Slides
-                  <div className="max-w-5xl w-full text-left relative z-10 flex flex-col h-full justify-center">
+                  <div className={`w-full text-left relative z-10 flex flex-col h-full justify-center ${slide.videoUrl ? 'max-w-7xl' : 'max-w-5xl'}`}>
                     {isActive && (
-                      <>
-                        <div className="animate-in fade-in slide-in-from-left-8 duration-700 delay-100 fill-mode-both mb-10 pb-6 border-b border-border">
+                      <div className={slide.videoUrl ? 'grid grid-cols-1 lg:grid-cols-5 gap-8 items-center h-full' : 'h-full flex flex-col justify-center'}>
+                        <div className={slide.videoUrl ? 'lg:col-span-3 flex flex-col justify-center' : 'flex flex-col justify-center'}>
+                          <div className="animate-in fade-in slide-in-from-left-8 duration-700 delay-100 fill-mode-both mb-10 pb-6 border-b border-border">
                           <span className="text-xs font-mono text-muted-foreground mb-3 block">0{index} / {String(slidesData.length - 1).padStart(2, '0')}</span>
                           <h2 className="text-4xl sm:text-6xl font-light tracking-tight text-foreground" style={{ fontFamily: '"IBM Plex Sans", sans-serif' }}>
                             {slide.title}
@@ -155,11 +156,9 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
                           <p className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200 fill-mode-both text-xl sm:text-2xl text-muted-foreground mb-8 font-light leading-relaxed max-w-4xl">{slide.text}</p>
                         )}
 
-                        {(slide.items || slide.videoUrl) && (
-                          <div className={`grid gap-6 mt-2 items-center ${slide.videoUrl && slide.items ? 'grid-cols-1 lg:grid-cols-5' : 'grid-cols-1'}`}>
-                            {slide.items && (
-                              <div className={`grid grid-cols-1 gap-4 ${!slide.videoUrl ? 'md:grid-cols-2' : 'lg:col-span-3'}`}>
-                                {slide.items.map((item, i) => {
+                        {slide.items && (
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+                            {slide.items.map((item, i) => {
                                   const isString = typeof item === 'string';
                                   const title = isString ? item : item.title;
                                   const hasDetails = !isString && item.details && item.details.length > 0;
@@ -217,26 +216,8 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
                                         CardContent
                                       )}
                                     </div>
-                                  );
-                                })}
-                              </div>
-                            )}
-                            {slide.videoUrl && (
-                              <div className="lg:col-span-2 w-full h-[45vh] sm:h-[60vh] flex justify-center animate-in fade-in slide-in-from-right-8 duration-700 delay-300">
-                                <div className="h-full aspect-[9/16] rounded-[2rem] overflow-hidden border-[6px] border-black/80 shadow-xl relative bg-black/95">
-                                  {slide.videoUrl.endsWith('.mp4') || slide.videoUrl.endsWith('.mov') ? (
-                                    <video 
-                                      src={slide.videoUrl} 
-                                      className="absolute inset-0 w-full h-full object-cover" 
-                                      controls 
-                                      playsInline 
-                                    />
-                                  ) : (
-                                    <iframe src={slide.videoUrl} className="absolute inset-0 w-full h-full" allow="autoplay" allowFullScreen></iframe>
-                                  )}
-                                </div>
-                              </div>
-                            )}
+                              );
+                            })}
                           </div>
                         )}
                         {slide.stackingItems && (
@@ -275,7 +256,25 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
                             </p>
                           </div>
                         )}
-                      </>
+                        </div>
+
+                        {slide.videoUrl && (
+                          <div className="lg:col-span-2 w-full h-[65vh] sm:h-[80vh] flex justify-center animate-in fade-in slide-in-from-right-8 duration-700 delay-300">
+                            <div className="h-full aspect-[9/16] rounded-[2rem] overflow-hidden border-[6px] border-black/80 shadow-xl relative bg-black/95">
+                              {slide.videoUrl.endsWith('.mp4') || slide.videoUrl.endsWith('.mov') ? (
+                                <video 
+                                  src={slide.videoUrl} 
+                                  className="absolute inset-0 w-full h-full object-cover" 
+                                  controls 
+                                  playsInline 
+                                />
+                              ) : (
+                                <iframe src={slide.videoUrl} className="absolute inset-0 w-full h-full" allow="autoplay" allowFullScreen></iframe>
+                              )}
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     )}
                   </div>
                 )}
