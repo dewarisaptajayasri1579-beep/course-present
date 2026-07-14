@@ -201,6 +201,10 @@ export const content = {
         items: [
           { title: 'GitHub', details: ['Tempat menyimpan source code', 'Mengelola versi aplikasi', 'Berkolaborasi dengan programmer lain'] },
           { title: 'Vercel', details: ['Meng-online-kan aplikasi (hosting gratis)', 'Otomatis update (deploy) saat kode berubah di GitHub'] }
+        ],
+        browserTabs: [
+          { id: 'github', label: 'GitHub', url: 'https://github.com', imageSrc: '/img/github.png' },
+          { id: 'vercel', label: 'Vercel', url: 'https://vercel.com', imageSrc: '/img/vercel.png' }
         ]
       },
       {
@@ -453,6 +457,10 @@ export const content = {
         items: [
           { title: 'GitHub', details: ['Code storage repository & collaboration'] },
           { title: 'Vercel', details: ['Automatic deployment from GitHub'] }
+        ],
+        browserTabs: [
+          { id: 'github', label: 'GitHub', url: 'https://github.com', imageSrc: '/img/github.png' },
+          { id: 'vercel', label: 'Vercel', url: 'https://vercel.com', imageSrc: '/img/vercel.png' }
         ]
       },
       {
