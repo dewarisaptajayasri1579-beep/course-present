@@ -25,9 +25,14 @@ export function SlideDevEx({ items }: { items: DevExItem[] }) {
   const step = items[active]
 
   return (
-    <div className="w-full h-full flex items-center justify-center -mt-8">
-      <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch px-4">
-        {/* Left — tabs */}
+    <div 
+      className="w-full flex-1 overflow-y-auto hide-scrollbar -mt-4 pb-24 h-[55vh]"
+      onWheel={(e) => e.stopPropagation()}
+      onTouchMove={(e) => e.stopPropagation()}
+    >
+      <div className="w-full min-h-full flex items-center justify-center">
+        <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch px-4">
+          {/* Left — tabs */}
         <div className="flex flex-col gap-4">
           {items.map((s, i) => (
             <button
@@ -118,6 +123,16 @@ export function SlideDevEx({ items }: { items: DevExItem[] }) {
           </div>
         </div>
       </div>
+        </div>
+      <style dangerouslySetInnerHTML={{__html: `
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .hide-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}} />
     </div>
   )
 }
