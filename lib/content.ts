@@ -82,6 +82,7 @@ export const content = {
         id: 'profile-ony',
         title: 'Coach Ony Sapta Nugraha',
         subtitle: 'Founder Seven Smarts Indonesia & IT Consultant',
+        videoUrl: 'https://drive.google.com/file/d/1JufgPtmHaoa4bHv83diXa4nuE3GLEq7F/preview',
         items: [
           'Memiliki pengalaman 10+ tahun di bidang IT & Software Development',
           'Telah menangani lebih dari 100 klien dari berbagai wilayah (Jepang, Jakarta, Surabaya, dll)',
@@ -299,6 +300,7 @@ export const content = {
         id: 'profile-ony',
         title: 'Coach Ony Sapta Nugraha',
         subtitle: 'Founder Seven Smarts Indonesia & IT Consultant',
+        videoUrl: 'https://drive.google.com/file/d/1JufgPtmHaoa4bHv83diXa4nuE3GLEq7F/preview',
         items: [
           '10+ years of experience in IT & Software Development',
           'Managed over 100 clients across various regions (Japan, Jakarta, Surabaya, etc.)',
