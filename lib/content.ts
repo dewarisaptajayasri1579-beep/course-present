@@ -139,6 +139,13 @@ export const content = {
           { title: 'Tools Konseptor (ChatGPT)', details: ['Mengembangkan ide & alur aplikasi', 'Menentukan fitur dan pengguna aplikasi', 'Membuat struktur menu & prompt'] },
           { title: 'Tools Frontend AI (v0, Lovable, Bolt)', details: ['Membuat tampilan responsive', 'Menghasilkan kode frontend otomatis', 'Mengubah desain hanya dengan chat (prompt)'] },
           { title: 'Tools Mockup (ChatGPT Image, Canva)', details: ['Gambaran visual sebelum aplikasi di-generate', 'Memastikan posisi tombol dan warna'] }
+        ],
+        browserTabs: [
+          { id: 'chatgpt', label: 'ChatGPT', url: 'https://chatgpt.com', imageSrc: '/img/tools/chatgpt.png' },
+          { id: 'lovable', label: 'Lovable', url: 'https://lovable.dev', imageSrc: '/img/tools/lovable.png' },
+          { id: 'v0', label: 'v0.app', url: 'https://v0.dev', imageSrc: '/img/tools/v0.png' },
+          { id: 'bolt', label: 'Bolt', url: 'https://bolt.new', imageSrc: '/img/tools/bolt.png' },
+          { id: 'canva', label: 'Canva', url: 'https://canva.com', imageSrc: '/img/tools/canva.png' }
         ]
       },
       {
@@ -384,6 +391,13 @@ export const content = {
           { title: 'Concept Tools (ChatGPT)', details: ['Ideas, Flows, Prompts'] },
           { title: 'Frontend AI (v0, Lovable)', details: ['Generates interactive code'] },
           { title: 'Design Tools (Canva)', details: ['Mockups'] }
+        ],
+        browserTabs: [
+          { id: 'chatgpt', label: 'ChatGPT', url: 'https://chatgpt.com', imageSrc: '/img/tools/chatgpt.png' },
+          { id: 'lovable', label: 'Lovable', url: 'https://lovable.dev', imageSrc: '/img/tools/lovable.png' },
+          { id: 'v0', label: 'v0.app', url: 'https://v0.dev', imageSrc: '/img/tools/v0.png' },
+          { id: 'bolt', label: 'Bolt', url: 'https://bolt.new', imageSrc: '/img/tools/bolt.png' },
+          { id: 'canva', label: 'Canva', url: 'https://canva.com', imageSrc: '/img/tools/canva.png' }
         ]
       },
       {

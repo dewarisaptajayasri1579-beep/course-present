@@ -20,6 +20,7 @@ import {
 import { SlideStackingCards, StackingCardItem } from './SlideStackingCards';
 import { SlideDevEx, DevExItem } from './SlideDevEx';
 import { SlideBentoGrid, BentoGridItem } from './SlideBentoGrid';
+import { SlideVirtualBrowser, BrowserTabItem } from './SlideVirtualBrowser';
 
 // Copied from content.ts to type the props locally
 export interface SlidePoint {
@@ -39,6 +40,7 @@ interface SlideItem {
   bentoItems?: BentoGridItem[];
   videoUrl?: string;
   videoSideText?: { title: string; description: string };
+  browserTabs?: BrowserTabItem[];
   bottomImages?: { src: string; label: string }[];
   text?: string;
   quote?: string;
@@ -223,6 +225,12 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
                             <div className="animate-in fade-in zoom-in-95 duration-1000 delay-300 fill-mode-both w-full h-full flex justify-center">
                               <SlideBentoGrid items={slide.bentoItems} />
                             </div>
+                          </div>
+                        )}
+
+                        {slide.browserTabs && (
+                          <div className="w-full mt-10">
+                            <SlideVirtualBrowser tabs={slide.browserTabs} />
                           </div>
                         )}
 
