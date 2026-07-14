@@ -71,11 +71,11 @@ export const content = {
         id: 'sesi-1',
         title: 'SESI 1 (09.00–10.30 WIB)',
         subtitle: 'Mindset, Peluang, dan Konsep Aplikasi',
-        items: [
-          { title: 'Pembukaan & Perkenalan Peserta', details: ['Pembukaan oleh coach.', 'Tujuan workshop & penjelasan hasil akhir yang akan dibuat peserta.', 'Masing-masing peserta memperkenalkan diri secara singkat (Nama, Pekerjaan, Pengalaman AI, Ide Aplikasi).'] },
-          { title: 'Siapa Coach Ony Sapta Nugraha?', details: ['Founder Seven Smarts Indonesia', 'Memiliki pengalaman 10+ tahun di bidang IT', 'Telah menangani lebih dari 100 klien dari berbagai wilayah (Jepang, Jakarta, Surabaya, dll)'] },
-          { title: 'Kenapa Harus Jualan Aplikasi?', details: ['Peluang bisnis dengan modal kecil', 'Sangat dibutuhkan di era digital', 'Bisa menjadi Passive Income'] },
-          { title: 'Menentukan Ide Aplikasi Anda Hari Ini', details: ['Sistem kasir, booking, laundry, dsb.', 'Tentukan target pengguna', 'Tentukan model bisnis'] }
+        devExItems: [
+          { num: "01", title: 'Pembukaan & Perkenalan', desc: 'Sesi awal dengan coach', details: ['Pembukaan oleh coach.', 'Tujuan workshop & penjelasan hasil akhir yang akan dibuat peserta.', 'Masing-masing peserta memperkenalkan diri secara singkat (Nama, Pekerjaan, Pengalaman AI, Ide Aplikasi).'] },
+          { num: "02", title: 'Siapa Coach Ony Sapta?', desc: 'Founder & IT Consultant', details: ['Founder Seven Smarts Indonesia.', 'Memiliki pengalaman 10+ tahun di bidang IT.', 'Telah menangani lebih dari 100 klien dari berbagai wilayah (Jepang, Jakarta, Surabaya, dll).'] },
+          { num: "03", title: 'Kenapa Harus Jualan Aplikasi?', desc: 'Peluang bisnis digital', details: ['Peluang bisnis dengan modal kecil.', 'Sangat dibutuhkan di era digital.', 'Bisa menjadi Passive Income (langganan bulanan).'] },
+          { num: "04", title: 'Menentukan Ide Aplikasi', desc: 'Pilih ide Anda hari ini', details: ['Contoh: Sistem kasir, booking, laundry, dsb.', 'Tentukan target pengguna secara spesifik.', 'Tentukan model bisnis yang paling masuk akal.'] }
         ]
       },
       {
@@ -278,11 +278,11 @@ export const content = {
         id: 'sesi-1',
         title: 'SESSION 1 (09.00–10.30)',
         subtitle: 'Mindset, Opportunities, and App Concepts',
-        items: [
-          { title: 'Opening & Introductions', details: ['Workshop goals', 'Personal intros'] },
-          { title: 'Who is Coach Ony?', details: ['Founder Seven Smarts Indonesia', '10+ years experience'] },
-          { title: 'Why the App Business?', details: ['High Demand', 'Low Capital', 'Passive Income'] },
-          { title: 'Determine Your App Idea Today', details: ['Pick a simple problem to solve'] }
+        devExItems: [
+          { num: "01", title: 'Opening & Introductions', desc: 'Welcome session', details: ['Workshop goals & final output explanation.', 'Personal introductions (Name, Job, AI Experience, App Idea).'] },
+          { num: "02", title: 'Who is Coach Ony?', desc: 'Founder & Consultant', details: ['Founder of Seven Smarts Indonesia.', '10+ years experience in IT.', 'Managed 100+ clients across regions (Japan, Jakarta, etc).'] },
+          { num: "03", title: 'Why the App Business?', desc: 'Digital opportunity', details: ['High demand in the digital era.', 'Low capital required.', 'Generates Passive Income (subscriptions).'] },
+          { num: "04", title: 'Determine Your App Idea', desc: 'Pick your concept today', details: ['E.g., POS, Booking, Laundry manager.', 'Specify your target users.', 'Decide on a viable business model.'] }
         ]
       },
       {
