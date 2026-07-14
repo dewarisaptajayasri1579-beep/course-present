@@ -79,6 +79,16 @@ export const content = {
         ]
       },
       {
+        id: 'profile-ony',
+        title: 'Coach Ony Sapta Nugraha',
+        subtitle: 'Founder Seven Smarts Indonesia & IT Consultant',
+        items: [
+          'Memiliki pengalaman 10+ tahun di bidang IT & Software Development',
+          'Telah menangani lebih dari 100 klien dari berbagai wilayah (Jepang, Jakarta, Surabaya, dll)',
+          'Fokus membantu UMKM dan perusahaan untuk digitalisasi bisnis melalui aplikasi'
+        ]
+      },
+      {
         id: 'peluang',
         title: 'Kenapa Harus Jualan Aplikasi?',
         bentoItems: [
@@ -283,6 +293,16 @@ export const content = {
           { num: "02", title: 'Who is Coach Ony?', desc: 'Founder & Consultant', details: ['Founder of Seven Smarts Indonesia.', '10+ years experience in IT.', 'Managed 100+ clients across regions (Japan, Jakarta, etc).'] },
           { num: "03", title: 'Why the App Business?', desc: 'Digital opportunity', details: ['High demand in the digital era.', 'Low capital required.', 'Generates Passive Income (subscriptions).'] },
           { num: "04", title: 'Determine Your App Idea', desc: 'Pick your concept today', details: ['E.g., POS, Booking, Laundry manager.', 'Specify your target users.', 'Decide on a viable business model.'] }
+        ]
+      },
+      {
+        id: 'profile-ony',
+        title: 'Coach Ony Sapta Nugraha',
+        subtitle: 'Founder Seven Smarts Indonesia & IT Consultant',
+        items: [
+          '10+ years of experience in IT & Software Development',
+          'Managed over 100 clients across various regions (Japan, Jakarta, Surabaya, etc.)',
+          'Focused on helping SMEs and enterprises digitalize their business through apps'
         ]
       },
       {
