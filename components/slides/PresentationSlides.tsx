@@ -248,7 +248,7 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                               </svg>
                             </div>
-                            <div className="w-full sm:w-[400px] aspect-[9/16] rounded-[2.5rem] overflow-hidden border-[8px] border-black/80 shadow-2xl relative bg-black/95">
+                            <div className="w-[85%] sm:w-[320px] aspect-[9/16] rounded-[2.5rem] overflow-hidden border-[8px] border-black/80 shadow-2xl relative bg-black/95">
                               {slide.videoUrl.endsWith('.mp4') || slide.videoUrl.endsWith('.mov') ? (
                                 <video 
                                   src={slide.videoUrl} 
