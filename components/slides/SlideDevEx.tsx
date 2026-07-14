@@ -22,18 +22,6 @@ export function SlideDevEx({ items }: { items: DevExItem[] }) {
     }, 180)
   }
 
-  // Auto-advance every 4s
-  useEffect(() => {
-    const t = setInterval(() => {
-      setVisible(false)
-      setTimeout(() => {
-        setActive(prev => (prev + 1) % items.length)
-        setVisible(true)
-      }, 180)
-    }, 4500)
-    return () => clearInterval(t)
-  }, [items.length])
-
   const step = items[active]
 
   return (
