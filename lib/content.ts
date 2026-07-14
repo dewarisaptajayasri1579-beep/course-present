@@ -176,7 +176,15 @@ export const content = {
         id: 'tahap-5',
         title: 'Tahap 5: Generate & Revisi',
         text: 'Masukkan prompt ke Google AI Studio, v0.app, Lovable, atau Bolt dan tunggu hasilnya.',
-        items: ['Periksa struktur halaman', 'Gunakan perintah revisi: "Buat desain lebih sederhana" atau "Ubah warna utama menjadi hijau"']
+        items: ['Periksa struktur halaman', 'Gunakan perintah revisi: "Buat desain lebih sederhana" atau "Ubah warna utama menjadi hijau"'],
+        browserTabs: [
+          { id: 'hasil-1', label: 'Hasil 1', imageSrc: '/img/hasilai-1.png' },
+          { id: 'hasil-2', label: 'Hasil 2', imageSrc: '/img/hasilai-2.png' },
+          { id: 'hasil-3', label: 'Hasil 3', imageSrc: '/img/hasilai-3.png' },
+          { id: 'hasil-4', label: 'Hasil 4', imageSrc: '/img/hasilai-4.png' },
+          { id: 'hasil-5', label: 'Hasil 5', imageSrc: '/img/hasilai-5.png' },
+          { id: 'hasil-6', label: 'Hasil 6', imageSrc: '/img/hasilai-6.png' }
+        ]
       },
       {
         id: 'ishoma',
@@ -432,7 +440,15 @@ export const content = {
         id: 'tahap-5',
         title: 'Phase 5: Generate & Revise',
         text: 'Input your prompt into Google AI Studio, v0.app, Lovable, or Bolt and wait for the result.',
-        items: ['Check the page structure', 'Use revision commands: "Make design simpler" or "Change primary color to green"']
+        items: ['Check the page structure', 'Use revision commands: "Make design simpler" or "Change primary color to green"'],
+        browserTabs: [
+          { id: 'hasil-1', label: 'Result 1', imageSrc: '/img/hasilai-1.png' },
+          { id: 'hasil-2', label: 'Result 2', imageSrc: '/img/hasilai-2.png' },
+          { id: 'hasil-3', label: 'Result 3', imageSrc: '/img/hasilai-3.png' },
+          { id: 'hasil-4', label: 'Result 4', imageSrc: '/img/hasilai-4.png' },
+          { id: 'hasil-5', label: 'Result 5', imageSrc: '/img/hasilai-5.png' },
+          { id: 'hasil-6', label: 'Result 6', imageSrc: '/img/hasilai-6.png' }
+        ]
       },
       {
         id: 'ishoma',
