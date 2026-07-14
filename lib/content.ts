@@ -42,28 +42,28 @@ export const content = {
             title: "Peluang Bisnis",
             desc: "Memahami peluang bisnis pembuatan aplikasi dan melihat potensi besar pasar digital.",
             stats: [{ v: "100%", l: "Potensi" }, { v: "UMKM", l: "Target Utama" }],
-            img: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/researcher-CvhqOuV6irGwBOnJoTGFlXdbyYBRjb.png"
+            img: "/img/cards/peluang_bisnis.png"
           },
           {
             label: "KONSEP",
             title: "Merancang Konsep Cepat",
             desc: "Mampu membuat konsep aplikasi terstruktur, dari fitur hingga model bisnis menggunakan bantuan ChatGPT.",
             stats: [{ v: "Tahap 1", l: "Ideation" }, { v: "Prompt", l: "AI" }],
-            img: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/analyst-Ysxnqg7Fpy2cfA56PiIttv1KximMhT.png"
+            img: "/img/cards/konsep_aplikasi.png"
           },
           {
             label: "DEVELOPMENT",
             title: "Generate Kode Frontend",
             desc: "Mampu menggunakan tools AI (Lovable / v0) untuk menghasilkan kode frontend siap pakai tanpa ngoding dari nol.",
             stats: [{ v: "99%", l: "Otomatis" }, { v: "UI/UX", l: "Premium" }],
-            img: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/coder-9bItvCegU6TXUqbX3tUXGBAtvkBkXp.png"
+            img: "/img/cards/generate_kode.png"
           },
           {
             label: "DEPLOY",
             title: "Online & Siap Jual",
             desc: "Memahami dasar GitHub dan Vercel, hingga memiliki 1 aplikasi sederhana yang sudah online dan siap dipamerkan.",
             stats: [{ v: "1 App", l: "Live" }, { v: "Siap", l: "Jual" }],
-            img: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/executor-o1q6509qMLXMtpBIGo49vcgOu34sI1.png"
+            img: "/img/cards/deploy_aplikasi.png"
           }
         ]
       },
@@ -249,28 +249,28 @@ export const content = {
             title: "App Business Potential",
             desc: "Understand app business opportunities and see the huge potential of the digital market.",
             stats: [{ v: "100%", l: "Potential" }, { v: "SMEs", l: "Target" }],
-            img: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/researcher-CvhqOuV6irGwBOnJoTGFlXdbyYBRjb.png"
+            img: "/img/cards/peluang_bisnis.png"
           },
           {
             label: "CONCEPT",
             title: "Rapid Concepting",
             desc: "Able to create structured app concepts, from features to business models using ChatGPT.",
             stats: [{ v: "Phase 1", l: "Ideation" }, { v: "Prompt", l: "AI" }],
-            img: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/analyst-Ysxnqg7Fpy2cfA56PiIttv1KximMhT.png"
+            img: "/img/cards/konsep_aplikasi.png"
           },
           {
             label: "DEVELOPMENT",
             title: "Generate Frontend Code",
             desc: "Able to use AI tools (Lovable / v0) to generate ready-to-use frontend code without coding from scratch.",
             stats: [{ v: "99%", l: "Automated" }, { v: "Premium", l: "UI/UX" }],
-            img: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/coder-9bItvCegU6TXUqbX3tUXGBAtvkBkXp.png"
+            img: "/img/cards/generate_kode.png"
           },
           {
             label: "DEPLOY",
             title: "Live & Ready to Sell",
             desc: "Understand basics of GitHub and Vercel, up to owning 1 simple app deployed online and ready to sell.",
             stats: [{ v: "1 App", l: "Live" }, { v: "Ready", l: "To Sell" }],
-            img: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/executor-o1q6509qMLXMtpBIGo49vcgOu34sI1.png"
+            img: "/img/cards/deploy_aplikasi.png"
           }
         ]
       },
