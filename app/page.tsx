@@ -138,33 +138,6 @@ export default function AgenticPage() {
 
         {/* Title + metrics — anchored to bottom left */}
         <div className="absolute inset-x-0 bottom-0 z-30 flex flex-col px-6 md:px-12 pb-12 max-w-3xl">
-          
-          {/* Animated Logo */}
-          <div 
-            className="mb-8 w-24 sm:w-32 h-auto object-contain"
-            style={{
-              opacity: heroReady ? 1 : 0,
-              transform: heroReady ? "translateY(0px)" : "translateY(24px)",
-              transition: "opacity 1s cubic-bezier(0.16,1,0.3,1) 0ms, transform 1s cubic-bezier(0.16,1,0.3,1) 0ms",
-            }}
-          >
-            <style dangerouslySetInnerHTML={{__html: `
-              @keyframes floatLogo {
-                0% { transform: translateY(0px); }
-                50% { transform: translateY(-10px); }
-                100% { transform: translateY(0px); }
-              }
-              .animate-float-logo {
-                animation: floatLogo 4s ease-in-out infinite;
-              }
-            `}} />
-            <img 
-              src="/img/logo7smarts.png" 
-              alt="7Smarts Logo" 
-              className="w-full h-full animate-float-logo"
-            />
-          </div>
-
           {/* Title */}
           <h1
             className="text-6xl sm:text-7xl md:text-8xl font-light text-[#111] leading-[1.0] tracking-tight mb-10"

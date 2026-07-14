@@ -43,6 +43,25 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
       {/* V0-style minimalistic background dots (subtle texture) */}
       <div className="absolute inset-0 z-0 opacity-30 pointer-events-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMCwwLDAsMC4wNSkiLz48L3N2Zz4=')]"></div>
 
+      {/* Global Animated Logo */}
+      <div className="absolute top-6 left-6 sm:top-10 sm:left-10 z-50 pointer-events-none w-20 sm:w-28 opacity-80">
+        <style dangerouslySetInnerHTML={{__html: `
+          @keyframes floatLogo {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+          }
+          .animate-float-logo {
+            animation: floatLogo 4s ease-in-out infinite;
+          }
+        `}} />
+        <img 
+          src="/img/logo7smarts.png" 
+          alt="7Smarts Logo" 
+          className="w-full h-auto object-contain animate-float-logo"
+        />
+      </div>
+
       <Swiper
         modules={[Navigation, Pagination, Keyboard, EffectFade]}
         effect="fade"
