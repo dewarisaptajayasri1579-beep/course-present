@@ -60,9 +60,9 @@ export const content = {
           },
           {
             label: "DEPLOY",
-            title: "Online & Siap Jual",
+            title: "Online & Siap Demo",
             desc: "Memahami dasar GitHub dan Vercel, hingga memiliki 1 aplikasi sederhana yang sudah online dan siap dipamerkan.",
-            stats: [{ v: "1 App", l: "Live" }, { v: "Siap", l: "Jual" }],
+            stats: [{ v: "1 App", l: "Live" }, { v: "Siap", l: "Demo" }],
             img: "/img/cards/deploy_aplikasi.png"
           }
         ]
@@ -325,9 +325,9 @@ export const content = {
           },
           {
             label: "DEPLOY",
-            title: "Live & Ready to Sell",
-            desc: "Understand basics of GitHub and Vercel, up to owning 1 simple app deployed online and ready to sell.",
-            stats: [{ v: "1 App", l: "Live" }, { v: "Ready", l: "To Sell" }],
+            title: "Live & Ready to Demo",
+            desc: "Understand basics of GitHub and Vercel, up to owning 1 simple app deployed online and ready to demo.",
+            stats: [{ v: "1 App", l: "Live" }, { v: "Ready", l: "To Demo" }],
             img: "/img/cards/deploy_aplikasi.png"
           }
         ]
