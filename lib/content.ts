@@ -89,7 +89,9 @@ export const content = {
         },
         bottomImages: [
           { src: '/img/aktifitas.png', label: 'Aktivitas' },
-          { src: '/img/transfer/image.png', label: 'Cuan dari Aplikasi' }
+          { src: '/img/transfer/image.png', label: 'Cuan dari Aplikasi' },
+          { src: '/images/rakuten-1.png', label: 'Rakuten Proof 1' },
+          { src: '/images/rakuten-2.png', label: 'Rakuten Proof 2' }
         ],
         items: [
           { title: '2005–2008 | Pendidikan', details: ['Kuliah D3 Teknik Komputer.'] },
@@ -354,7 +356,9 @@ export const content = {
         },
         bottomImages: [
           { src: '/img/aktifitas.png', label: 'Aktivitas' },
-          { src: '/img/transfer/image.png', label: 'Cuan dari Aplikasi' }
+          { src: '/img/transfer/image.png', label: 'Cuan dari Aplikasi' },
+          { src: '/images/rakuten-1.png', label: 'Rakuten Proof 1' },
+          { src: '/images/rakuten-2.png', label: 'Rakuten Proof 2' }
         ],
         items: [
           { title: '2005–2008 | Education', details: ['Diploma in Computer Engineering.'] },
