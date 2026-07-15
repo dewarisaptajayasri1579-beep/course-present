@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Keyboard, EffectFade } from 'swiper/modules';
 import 'swiper/css';
@@ -48,6 +48,27 @@ interface SlideItem {
 
 export default function PresentationSlides({ slidesData }: { slidesData: SlideItem[] }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+  }, []);
+
+  const toggleFullscreen = () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(err => {
+        console.error(`Error attempting to enable fullscreen: ${err.message}`);
+      });
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+    }
+  };
 
   return (
     <div className="w-full h-full relative group bg-background text-foreground overflow-hidden font-sans">
@@ -310,11 +331,28 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
         ))}
       </Swiper>
       
+      <button
+        onClick={toggleFullscreen}
+        className="fixed bottom-6 right-6 z-[60] p-3 bg-white/80 hover:bg-white backdrop-blur-md rounded-full shadow-lg border border-gray-200 text-gray-700 transition-all focus:outline-none focus:ring-2 focus:ring-black/10 group"
+        title={isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}
+      >
+        {isFullscreen ? (
+          <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 14h6m0 0v6m0-6l-7 7m17-11h-6m0 0V4m0 6l7-7M4 10h6m0 0V4m0 6l-7-7m17 11h-6m0 0v6m0-6l7 7" />
+          </svg>
+        ) : (
+          <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+          </svg>
+        )}
+      </button>
+
       {/* Global overrides for Swiper controls - Minimalist styling */}
       <style dangerouslySetInnerHTML={{__html: `
         .swiper-button-next, .swiper-button-prev {
           color: #000 !important;
-          background: #fff;
+          background: rgba(255, 255, 255, 0.8);
+          backdrop-filter: blur(4px);
           width: 50px !important;
           height: 50px !important;
           border-radius: 50%;
@@ -324,8 +362,8 @@ export default function PresentationSlides({ slidesData }: { slidesData: SlideIt
           transition: all 0.3s ease;
         }
         .swiper-button-next::after, .swiper-button-prev::after {
-          font-size: 16px !important;
-          font-weight: 600;
+          font-size: 20px !important;
+          font-weight: bold;
         }
         .group:hover .swiper-button-next, .group:hover .swiper-button-prev {
           opacity: 0.7;
